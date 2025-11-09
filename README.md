@@ -1,18 +1,15 @@
-# React
+# Portfolio - Sundhar Kaleeswaran
 
-A modern React-based project utilizing the latest frontend technologies and tools for building responsive web applications.
+A modern React-based portfolio showcasing my expertise as an Associate Software Developer in Test.
 
 ## 🚀 Features
 
-- **React 18** - React version with improved rendering and concurrent features
+- **React 18** - Modern React with improved rendering and concurrent features
 - **Vite** - Lightning-fast build tool and development server
-- **Redux Toolkit** - State management with simplified Redux setup
 - **TailwindCSS** - Utility-first CSS framework with extensive customization
 - **React Router v6** - Declarative routing for React applications
-- **Data Visualization** - Integrated D3.js and Recharts for powerful data visualization
-- **Form Management** - React Hook Form for efficient form handling
-- **Animation** - Framer Motion for smooth UI animations
-- **Testing** - Jest and React Testing Library setup
+- **Responsive Design** - Mobile-first approach with Tailwind CSS breakpoints
+- **Professional Portfolio** - Showcasing skills, experience, and projects
 
 ## 📋 Prerequisites
 
@@ -24,71 +21,37 @@ A modern React-based project utilizing the latest frontend technologies and tool
 1. Install dependencies:
    ```bash
    npm install
-   # or
-   yarn install
    ```
    
 2. Start the development server:
    ```bash
    npm start
-   # or
-   yarn start
    ```
 
 ## 📁 Project Structure
 
 ```
-react_app/
-├── public/             # Static assets
+Portfolio/
+├── public/             # Static assets including profile picture
 ├── src/
 │   ├── components/     # Reusable UI components
-│   ├── pages/          # Page components
+│   ├── pages/          # Page components (home, skills, projects, contact)
 │   ├── styles/         # Global styles and Tailwind configuration
 │   ├── App.jsx         # Main application component
 │   ├── Routes.jsx      # Application routes
 │   └── index.jsx       # Application entry point
-├── .env                # Environment variables
-├── index.html          # HTML template
 ├── package.json        # Project dependencies and scripts
 ├── tailwind.config.js  # Tailwind CSS configuration
 └── vite.config.js      # Vite configuration
 ```
 
-## 🧩 Adding Routes
-
-To add new routes to the application, update the `Routes.jsx` file:
-
-```jsx
-import { useRoutes } from "react-router-dom";
-import HomePage from "pages/HomePage";
-import AboutPage from "pages/AboutPage";
-
-const ProjectRoutes = () => {
-  let element = useRoutes([
-    { path: "/", element: <HomePage /> },
-    { path: "/about", element: <AboutPage /> },
-    // Add more routes as needed
-  ]);
-
-  return element;
-};
-```
-
 ## 🎨 Styling
 
-This project uses Tailwind CSS for styling. The configuration includes:
-
-- Forms plugin for form styling
-- Typography plugin for text styling
-- Aspect ratio plugin for responsive elements
-- Container queries for component-specific responsive design
-- Fluid typography for responsive text
+This project uses Tailwind CSS for styling with custom configurations for:
+- Professional color schemes
+- Responsive typography
 - Animation utilities
-
-## 📱 Responsive Design
-
-The app is built with responsive design using Tailwind CSS breakpoints.
-
+- Component-specific styling
 
 ## 📦 Deployment
 
@@ -100,6 +63,6 @@ npm run build
 
 ## 🙏 Acknowledgments
 
-- Built with [Rocket.new](https://rocket.new)
-- Powered by React and Vite
+- Built with React and Vite
 - Styled with Tailwind CSS
+- Designed for professional portfolio presentation
