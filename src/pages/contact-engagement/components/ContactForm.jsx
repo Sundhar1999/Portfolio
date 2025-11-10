@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
+import emailjs from '@emailjs/browser';
 import Button from '../../../components/ui/Button';
 import Input from '../../../components/ui/Input';
 import Select from '../../../components/ui/Select';
 import Icon from '../../../components/AppIcon';
+import { EMAILJS_CONFIG } from '../../../config/emailjs';
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -79,8 +81,22 @@ const ContactForm = () => {
 
     setIsSubmitting(true);
 
-    // Simulate form submission
-    setTimeout(() => {
+    try {
+      // Send email using EmailJS
+      await emailjs.send(
+        EMAILJS_CONFIG.SERVICE_ID,
+        EMAILJS_CONFIG.TEMPLATE_ID,
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          subject: formData.subject,
+          message_type: formData.messageType,
+          message: formData.message,
+          to_email: 'sundhark603@gmail.com'
+        },
+        EMAILJS_CONFIG.PUBLIC_KEY
+      );
+
       setIsSubmitting(false);
       setIsSubmitted(true);
       
@@ -95,7 +111,12 @@ const ContactForm = () => {
         });
         setIsSubmitted(false);
       }, 3000);
-    }, 2000);
+    } catch (error) {
+      console.error('Email sending failed:', error);
+      setIsSubmitting(false);
+      // You can add error handling here
+      alert('Failed to send message. Please try again or contact directly at sundhark603@gmail.com');
+    }
   };
 
   if (isSubmitted) {

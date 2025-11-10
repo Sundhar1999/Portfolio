@@ -20,9 +20,7 @@ const SkillsExperience = () => {
               QA & <span className="text-gradient">Testing Expertise</span>
             </h1>
             <p className="text-xl text-text-secondary max-w-3xl mx-auto">
-              Explore my specialized journey in Quality Assurance, Performance Testing, and Test Automation. 
-              Discover how my testing expertise can ensure the quality and reliability of your software products.
-            </p>
+                Pushing software to its limits—because true quality never breaks under pressure</p>
           </div>
 
           {/* Expertise Cards */}
@@ -170,7 +168,6 @@ const SkillsExperience = () => {
         </div>
       </footer>
       {/* Floating Elements */}
-      <CTAButton position="floating" variant="default" />
       <AIChatbot />
     </div>
   );

@@ -83,12 +83,17 @@ const Header = () => {
             <div className="hidden md:block">
               <Button
                 variant="default"
-                iconName="MessageCircle"
+                iconName="Download"
                 iconPosition="left"
-                onClick={() => handleNavigation('/contact-engagement')}
+                onClick={() => {
+                  const link = document.createElement('a');
+                  link.href = '/assets/resume.pdf';
+                  link.download = 'Resume.pdf';
+                  link.click();
+                }}
                 className="hover-lift"
               >
-                Let's Connect
+                Download Resume
               </Button>
             </div>
 
@@ -139,12 +144,18 @@ const Header = () => {
               <div className="mt-8 pt-6 border-t border-border">
                 <Button
                   variant="default"
-                  iconName="MessageCircle"
+                  iconName="Download"
                   iconPosition="left"
                   fullWidth
-                  onClick={() => handleNavigation('/contact-engagement')}
+                  onClick={() => {
+                    const link = document.createElement('a');
+                    link.href = '/assets/resume.pdf';
+                    link.download = 'Resume.pdf';
+                    link.click();
+                    setIsMobileMenuOpen(false);
+                  }}
                 >
-                  Let's Connect
+                  Download Resume
                 </Button>
               </div>
             </div>

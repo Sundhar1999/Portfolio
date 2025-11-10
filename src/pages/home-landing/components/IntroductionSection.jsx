@@ -29,7 +29,7 @@ const IntroductionSection = () => {
 
 
   return (
-    <section className="py-10 px-6 bg-gradient-to-b from-gray-50 to-white">
+    <section className="pt-10 pb-4 px-6 bg-gradient-to-b from-gray-50 to-white">
       <div className="max-w-6xl mx-auto">
         {/* Main Introduction */}
         <div className="grid lg:grid-cols-2 gap-10 items-center mb-10">

@@ -7,43 +7,43 @@ const FAQSection = () => {
   const faqs = [
     {
       id: 1,
-      question: "What\'s your typical response time for project inquiries?",
-      answer: `I aim to respond to all project inquiries within 24 hours during business days. For urgent matters, I'm available via phone during business hours (9 AM - 6 PM PST). Initial consultations are usually scheduled within 48-72 hours of first contact.`
+      question: "What\'s your experience in QA and testing?",
+      answer: `I have 3+ years of experience as a QA Performance & Automation Engineer, currently working at Tecsys Inc. I specialize in performance testing with JMeter and LoadRunner, test automation using Selenium and Playwright, and comprehensive API testing with Postman. I've successfully supported enterprise applications with 700+ concurrent users.`
     },
     {
       id: 2,
-      question: "What types of projects do you work on?",
-      answer: `I specialize in full-stack web development, mobile applications, and UI/UX design. My expertise includes React, Node.js, Python, and cloud technologies. I work on everything from startup MVPs to enterprise applications, e-commerce platforms, and custom software solutions.`
+      question: "What testing tools and technologies do you work with?",
+      answer: `I'm proficient in JMeter, LoadRunner, Selenium WebDriver, Playwright, Postman, TestNG, and various CI/CD tools. I also work with programming languages like Java, Python, JavaScript, and have experience with cloud platforms, databases, and modern web technologies including React and Node.js.`
     },
     {
       id: 3,
-      question: "Do you work with remote teams and clients?",
-      answer: `Absolutely! I have extensive experience working with remote teams and clients worldwide. I'm comfortable with various collaboration tools like Slack, Zoom, Figma, and project management platforms. I'm based in PST but can accommodate different time zones for meetings and communication.`
+      question: "Can you help with performance testing and optimization?",
+      answer: `Absolutely! Performance testing is one of my core specialties. I can design and execute load tests, stress tests, and endurance tests using JMeter and LoadRunner. I've optimized applications to handle high concurrent user loads and can identify performance bottlenecks and provide actionable recommendations.`
     },
     {
       id: 4,
-      question: "What\'s your project timeline and pricing structure?",
-      answer: `Project timelines vary based on complexity, typically ranging from 2-12 weeks. I provide detailed project estimates after our initial consultation. I offer both fixed-price projects and hourly rates depending on the scope. All pricing includes regular updates, testing, and post-launch support.`
+      question: "Do you provide test automation services?",
+      answer: `Yes, I specialize in test automation with 90% automation efficiency. I can create robust automation frameworks using Selenium, Playwright, and other tools. This includes functional testing, regression testing, API testing, and integration with CI/CD pipelines for continuous testing.`
     },
     {
       id: 5,
-      question: "Do you provide ongoing support after project completion?",
-      answer: `Yes, I offer various support packages including bug fixes, feature updates, and maintenance. Most projects include 30 days of complimentary support. I also provide training sessions to help your team manage the delivered solution effectively.`
+      question: "What\'s your approach to API testing?",
+      answer: `I have extensive experience in both SOAP and REST API testing using Postman and automated validation scripts. I can design comprehensive test suites for API endpoints, validate data integrity, test error handling, and ensure proper authentication and authorization mechanisms.`
     },
     {
       id: 6,
-      question: "Can you help with existing projects or just new ones?",
-      answer: `I work on both new projects and existing codebases. I can help with code reviews, performance optimization, feature additions, bug fixes, and modernizing legacy systems. I always start with a thorough assessment to understand the current state and requirements.`
+      question: "Can you work on AI/ML and data analytics projects?",
+      answer: `Yes! I have experience with deep learning, signal processing, and data analytics. I've worked on projects involving brain-computer interfaces, medical AI for CHF detection, and sustainable technology solutions. I can contribute to both the development and testing aspects of AI/ML projects.`
     },
     {
       id: 7,
-      question: "What information should I include in my initial inquiry?",
-      answer: `Please include your project goals, target audience, preferred timeline, budget range, and any specific technical requirements. If you have existing designs, wireframes, or technical documentation, that's helpful too. The more details you provide, the better I can tailor my response to your needs.`
+      question: "What\'s your availability for consulting or collaboration?",
+      answer: `I'm based in Ottawa, ON, Canada (EST timezone) and available for consulting, collaboration, and freelance projects. I typically respond within 24 hours and can accommodate different time zones for meetings. I'm open to both short-term consulting and longer-term project collaborations.`
     },
     {
       id: 8,
-      question: "Do you sign NDAs and work with confidential projects?",
-      answer: `Yes, I regularly work with confidential projects and am happy to sign NDAs before discussing project details. I understand the importance of protecting intellectual property and maintain strict confidentiality standards for all client work.`
+      question: "Do you have experience with enterprise-level applications?",
+      answer: `Yes, at Tecsys Inc, I work with enterprise-level supply chain and distribution software. I understand the complexities of large-scale applications, compliance requirements, and the importance of maintaining high quality standards in mission-critical business systems.`
     }
   ];
 
@@ -59,7 +59,7 @@ const FAQSection = () => {
           <span>Frequently Asked Questions</span>
         </h3>
         <p className="text-text-secondary">
-          Quick answers to common questions about working together.
+          Common questions about my QA expertise and collaboration opportunities.
         </p>
       </div>
       <div className="space-y-4">

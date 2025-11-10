@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Image from '../../../components/AppImage';
 import Button from '../../../components/ui/Button';
 import Icon from '../../../components/AppIcon';
+import QAPhilosophyModal from '../../../components/ui/QAPhilosophyModal';
 
 const HeroSection = ({ onNavigate }) => {
+  const [isQAModalOpen, setIsQAModalOpen] = useState(false);
   const heroData = {
     name: "Sundhar Kaleeswaran",
     title: "Associate Software Developer in Test",
@@ -50,12 +52,12 @@ const HeroSection = ({ onNavigate }) => {
               <Button
                 variant="default"
                 size="lg"
-                iconName="ArrowRight"
+                iconName="Shield"
                 iconPosition="right"
-                onClick={() => onNavigate('/projects-portfolio')}
+                onClick={() => setIsQAModalOpen(true)}
                 className="hover-lift">
 
-                View My Work
+                What is QA?
               </Button>
               
               <Button
@@ -100,11 +102,11 @@ const HeroSection = ({ onNavigate }) => {
               <div className="absolute -bottom-4 -right-4 w-64 h-64 bg-gradient-to-tl from-secondary/20 to-primary/20 rounded-full blur-xl"></div>
               
               {/* Main Image Container */}
-              <div className="relative w-80 h-80 rounded-full overflow-hidden border-4 border-white shadow-2xl hover-lift">
+              <div className="relative w-96 h-96 rounded-full overflow-hidden border-4 border-white shadow-2xl hover-lift">
                 <img
                   src={heroData?.image}
                   alt={heroData?.imageAlt}
-                  className="w-full h-full object-cover relative z-10"
+                  className="object-cover relative z-22 scale-60 -translate-y-10"
                 />
               </div>
 
@@ -113,6 +115,12 @@ const HeroSection = ({ onNavigate }) => {
           </div>
         </div>
       </div>
+      
+      <QAPhilosophyModal 
+        isOpen={isQAModalOpen} 
+        onClose={() => setIsQAModalOpen(false)} 
+      />
+      
       {/* Scroll Indicator */}
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
         <div className="flex flex-col items-center space-y-2 text-text-secondary">

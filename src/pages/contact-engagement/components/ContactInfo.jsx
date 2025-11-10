@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Icon from '../../../components/AppIcon';
 import Button from '../../../components/ui/Button';
+import { generatePortfolioPDF } from '../../../utils/portfolioPdfGenerator';
+import QuickNoteModal from '../../../components/ui/QuickNoteModal';
 
 const ContactInfo = () => {
+  const [isNoteModalOpen, setIsNoteModalOpen] = useState(false);
   const contactMethods = [
     {
       type: 'email',
@@ -20,12 +23,12 @@ const ContactInfo = () => {
       icon: 'Phone',
       description: 'Available for urgent matters',
       action: () => window.location.href = 'tel:+12269619931',
-      available: 'Mon-Fri, 9AM-6PM EST'
+      available: 'Mon-Fri, 9AM - 5PM EST'
     },
     {
       type: 'location',
       label: 'Location',
-      value: 'Toronto, ON, Canada',
+      value: 'Ottawa, ON, Canada',
       icon: 'MapPin',
       description: 'Open to remote work',
       action: null,
@@ -51,8 +54,7 @@ const ContactInfo = () => {
 
   const availability = {
     timezone: 'Eastern Standard Time (EST)',
-    workingHours: 'Monday - Friday, 9:00 AM - 6:00 PM',
-    emergencyContact: 'Available for urgent project matters',
+    workingHours: 'Monday - Friday, 9:00 AM - 5:00 PM',
     preferredMethod: 'Email for detailed discussions, Phone for quick questions'
   };
 
@@ -75,8 +77,14 @@ const ContactInfo = () => {
               onClick={method?.action}
             >
               <div className="flex items-center space-x-3">
-                <div className="w-10 h-10 bg-primary bg-opacity-10 rounded-lg flex items-center justify-center">
-                  <Icon name={method?.icon} size={20} color="var(--color-primary)" />
+                <div className="w-10 h-10 bg-white border border-gray-200 rounded-lg flex items-center justify-center">
+                  <Icon name={method?.icon} size={20} color={
+                    method?.type === 'email' ? '#EA4335' : // Gmail red
+                    method?.type === 'phone' ? '#34A853' : // Phone green  
+                    method?.type === 'location' ? '#4285F4' : // Maps blue
+                    method?.type === 'linkedin' ? '#0A66C2' : // LinkedIn blue
+                    'var(--color-primary)'
+                  } />
                 </div>
                 <div>
                   <p className="font-medium text-text-primary">{method?.label}</p>
@@ -135,14 +143,6 @@ const ContactInfo = () => {
           </div>
           
           <div className="flex items-start space-x-3">
-            <Icon name="Zap" size={16} color="var(--color-text-secondary)" className="mt-0.5" />
-            <div>
-              <p className="text-sm font-medium text-text-primary">Emergency Contact</p>
-              <p className="text-sm text-text-secondary">{availability?.emergencyContact}</p>
-            </div>
-          </div>
-          
-          <div className="flex items-start space-x-3">
             <Icon name="MessageSquare" size={16} color="var(--color-text-secondary)" className="mt-0.5" />
             <div>
               <p className="text-sm font-medium text-text-primary">Preferred Method</p>
@@ -159,11 +159,11 @@ const ContactInfo = () => {
           <Button
             variant="outline"
             fullWidth
-            iconName="Calendar"
+            iconName="MessageSquare"
             iconPosition="left"
-            onClick={() => window.open('https://calendly.com/sundharkaleeswaran', '_blank')}
+            onClick={() => setIsNoteModalOpen(true)}
           >
-            Schedule a Meeting
+            Leave a Note
           </Button>
           
           <Button
@@ -186,12 +186,20 @@ const ContactInfo = () => {
             fullWidth
             iconName="FileText"
             iconPosition="left"
-            onClick={() => window.open('/assets/portfolio.pdf', '_blank')}
+            onClick={() => {
+              const pdf = generatePortfolioPDF();
+              pdf.save('Sundhar_Kaleeswaran_Portfolio.pdf');
+            }}
           >
             View Portfolio PDF
           </Button>
         </div>
       </div>
+      
+      <QuickNoteModal 
+        isOpen={isNoteModalOpen} 
+        onClose={() => setIsNoteModalOpen(false)} 
+      />
     </div>
   );
 };

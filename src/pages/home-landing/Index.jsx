@@ -5,7 +5,7 @@ import AIChatbot from '../../components/ui/AIChatbot';
 import CTAButton from '../../components/ui/CTAButton';
 import HeroSection from './components/HeroSection';
 import IntroductionSection from './components/IntroductionSection';
-import NavigationCards from './components/NavigationCards';
+import MyJourney from './components/MyJourney';
 
 const HomeLanding = () => {
   const navigate = useNavigate();
@@ -26,8 +26,8 @@ const HomeLanding = () => {
         {/* Introduction Section */}
         <IntroductionSection />
         
-        {/* Navigation Cards */}
-        <NavigationCards onNavigate={handleNavigation} />
+        {/* My Journey */}
+        <MyJourney />
       </main>
 
       {/* Interactive Elements */}

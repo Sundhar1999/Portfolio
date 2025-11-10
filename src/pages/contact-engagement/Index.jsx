@@ -77,20 +77,14 @@ const ContactEngagement = () => {
               <FAQSection />
             </div>
 
-            {/* Right Column - Contact Info & Calendar */}
+            {/* Right Column - Contact Info */}
             <div className="space-y-8">
               <ContactInfo />
-              <CalendarWidget />
             </div>
           </div>
         </div>
       </section>
-      {/* Social Connections Section */}
-      <section className="pb-16 px-8">
-        <div className="max-w-7xl mx-auto">
-          <SocialConnections />
-        </div>
-      </section>
+
       {/* Call to Action Section */}
       <section className="py-16 px-8 bg-gradient-to-r from-primary to-accent">
         <div className="max-w-4xl mx-auto text-center text-white">
@@ -102,6 +96,21 @@ const ContactEngagement = () => {
             I'm here to help turn your ideas into reality.
           </p>
           
+          <div className="mb-8">
+            <button
+              onClick={() => {
+                const link = document.createElement('a');
+                link.href = '/assets/resume.pdf';
+                link.download = 'Resume.pdf';
+                link.click();
+              }}
+              className="inline-flex items-center space-x-2 bg-white text-primary px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors duration-200"
+            >
+              <Icon name="Download" size={20} color="var(--color-primary)" />
+              <span>Download Resume</span>
+            </button>
+          </div>
+          
           <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-4">
             <div className="flex items-center space-x-2 text-white opacity-90">
               <Icon name="Clock" size={16} color="white" />
@@ -111,10 +120,6 @@ const ContactEngagement = () => {
               <Icon name="Globe" size={16} color="white" />
               <span className="text-sm">Available for remote collaboration</span>
             </div>
-            <div className="flex items-center space-x-2 text-white opacity-90">
-              <Icon name="Shield" size={16} color="white" />
-              <span className="text-sm">NDA friendly</span>
-            </div>
           </div>
         </div>
       </section>
@@ -123,8 +128,8 @@ const ContactEngagement = () => {
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col md:flex-row items-center justify-between">
             <div className="flex items-center space-x-3 mb-4 md:mb-0">
-              <div className="w-8 h-8 bg-gradient-to-br from-primary to-accent rounded-lg flex items-center justify-center">
-                <Icon name="Code2" size={16} color="white" />
+              <div className="w-8 h-8 rounded-lg flex items-center justify-center">
+                <img src="/assets/images/tecsys-logo.png" alt="Tecsys Logo" className="w-full h-full object-contain" />
               </div>
               <div>
                 <p className="font-semibold text-text-primary">Sundhar Kaleeswaran</p>
@@ -135,7 +140,7 @@ const ContactEngagement = () => {
             <div className="flex items-center space-x-6">
               <div className="flex items-center space-x-2 text-sm text-text-secondary">
                 <Icon name="MapPin" size={14} color="var(--color-text-secondary)" />
-                <span>Toronto, ON, Canada</span>
+                <span>Ottawa, ON, Canada</span>
               </div>
               <div className="flex items-center space-x-2 text-sm text-text-secondary">
                 <Icon name="Mail" size={14} color="var(--color-text-secondary)" />
@@ -152,7 +157,6 @@ const ContactEngagement = () => {
         </div>
       </footer>
       {/* Floating Elements */}
-      <CTAButton position="floating" />
       <AIChatbot />
     </div>
   );

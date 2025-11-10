@@ -7,6 +7,7 @@ import HomeLanding from './pages/home-landing';
 import SkillsExperience from './pages/skills-experience';
 import ProjectsPortfolio from './pages/projects-portfolio';
 import ContactEngagement from './pages/contact-engagement';
+import NotesIndicator from './components/ui/NotesIndicator';
 
 const Routes = () => {
   return (
@@ -22,6 +23,7 @@ const Routes = () => {
         <Route path="/contact-engagement" element={<ContactEngagement />} />
         <Route path="*" element={<NotFound />} />
       </RouterRoutes>
+      <NotesIndicator />
       </ErrorBoundary>
     </BrowserRouter>
   );

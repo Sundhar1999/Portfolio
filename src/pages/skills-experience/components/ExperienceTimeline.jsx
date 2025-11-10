@@ -9,7 +9,7 @@ const ExperienceTimeline = () => {
   {
     id: 1,
     company: "Tecsys Inc.",
-    logo: "https://images.unsplash.com/photo-1560472354-b33ff0c44a43",
+    logo: "/assets/images/tecsys-logo.png",
     logoAlt: "Tecsys Inc. supply chain technology company logo",
     position: "Associate Software Developer in Test",
     duration: "May 2025 - Present",
@@ -29,7 +29,7 @@ const ExperienceTimeline = () => {
   {
     id: 2,
     company: "Tecsys Inc.",
-    logo: "https://images.unsplash.com/photo-1560472354-b33ff0c44a43",
+    logo: "/assets/images/tecsys-logo.png",
     logoAlt: "Tecsys Inc. supply chain technology company logo",
     position: "Intern - Developer (Performance, Scalability)",
     duration: "Sep 2024 - Apr 2025",
@@ -49,7 +49,7 @@ const ExperienceTimeline = () => {
   {
     id: 3,
     company: "LTIMindtree",
-    logo: "https://images.unsplash.com/photo-1549923746-c502d488b3ea",
+    logo: "/assets/images/ltimindtree-logo.jfif",
     logoAlt: "LTIMindtree technology consulting company logo",
     position: "Quality Engineer",
     duration: "Aug 2021 - Jul 2023",
@@ -69,7 +69,7 @@ const ExperienceTimeline = () => {
   {
     id: 4,
     company: "LTIMindtree",
-    logo: "https://images.unsplash.com/photo-1549923746-c502d488b3ea",
+    logo: "/assets/images/ltimindtree-logo.jfif",
     logoAlt: "LTIMindtree technology consulting company logo",
     position: "Java Developer",
     duration: "Jun 2021 - Aug 2021",
@@ -89,7 +89,7 @@ const ExperienceTimeline = () => {
   {
     id: 5,
     company: "SMI - Sri Mookambika Infotechs",
-    logo: "https://images.unsplash.com/photo-1549923746-c502d488b3ea",
+    logo: "/assets/images/SMI-logo.jfif",
     logoAlt: "SMI Sri Mookambika Infotechs company logo",
     position: "Web Development Intern",
     duration: "Jun 2019 - Jul 2019",
@@ -112,7 +112,7 @@ const ExperienceTimeline = () => {
   {
     id: 1,
     institution: "University of Windsor",
-    logo: "https://images.unsplash.com/photo-1565619905968-f66e913f94ad",
+    logo: "/assets/images/uwindsor-logo.jfif",
     logoAlt: "University of Windsor campus building with academic architecture",
     degree: "Master of Applied Computing",
     duration: "Sep 2023 - Dec 2024",
@@ -123,7 +123,7 @@ const ExperienceTimeline = () => {
   {
     id: 2,
     institution: "Sri Venkateswara College of Engineering",
-    logo: "https://images.unsplash.com/photo-1658424064805-bdf6a3b463ed",
+    logo: "/assets/images/SVCE-logo.png",
     logoAlt: "Sri Venkateswara College of Engineering campus with academic buildings",
     degree: "Bachelor of Engineering in Computer Science",
     duration: "Aug 2017 - Jun 2021",
@@ -158,11 +158,12 @@ const ExperienceTimeline = () => {
           <div key={exp?.id} className="relative flex items-start space-x-6 pb-8">
               {/* Timeline Dot */}
               <div className="relative z-10 flex-shrink-0">
-                <div className="w-12 h-12 bg-surface border-2 border-primary rounded-full flex items-center justify-center">
+                <div className="w-12 h-12 bg-white border-2 border-primary rounded-full flex items-center justify-center overflow-hidden">
                   <Image
                   src={exp?.logo}
                   alt={exp?.logoAlt}
-                  className="w-8 h-8 rounded-full object-cover" />
+                  className="w-10 h-10 object-contain"
+                  style={{ filter: 'none' }} />
 
                 </div>
               </div>
@@ -279,10 +280,13 @@ const ExperienceTimeline = () => {
           {education?.map((edu) =>
           <div key={edu?.id} className="bg-card border border-border rounded-lg p-6 hover:shadow-md nav-transition">
               <div className="flex items-start space-x-4 mb-4">
-                <Image
-                src={edu?.logo}
-                alt={edu?.logoAlt}
-                className="w-12 h-12 rounded-lg object-cover flex-shrink-0" />
+                <div className="w-12 h-12 bg-white border border-border rounded-lg flex items-center justify-center overflow-hidden flex-shrink-0">
+                  <Image
+                  src={edu?.logo}
+                  alt={edu?.logoAlt}
+                  className="w-10 h-10 object-contain"
+                  style={{ filter: 'none' }} />
+                </div>
 
                 <div className="flex-1">
                   <h4 className="font-semibold text-text-primary">{edu?.degree}</h4>

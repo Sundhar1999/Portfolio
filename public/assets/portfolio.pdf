@@ -1,0 +1,626 @@
+%PDF-1.4
+1 0 obj
+<<
+/Type /Catalog
+/Pages 2 0 R
+>>
+endobj
+
+2 0 obj
+<<
+/Type /Pages
+/Kids [3 0 R 4 0 R 5 0 R 6 0 R]
+/Count 4
+>>
+endobj
+
+3 0 obj
+<<
+/Type /Page
+/Parent 2 0 R
+/MediaBox [0 0 612 792]
+/Resources <<
+/Font <<
+/F1 7 0 R
+/F2 8 0 R
+/F3 9 0 R
+>>
+>>
+/Contents 10 0 R
+>>
+endobj
+
+4 0 obj
+<<
+/Type /Page
+/Parent 2 0 R
+/MediaBox [0 0 612 792]
+/Resources <<
+/Font <<
+/F1 7 0 R
+/F2 8 0 R
+/F3 9 0 R
+>>
+>>
+/Contents 11 0 R
+>>
+endobj
+
+5 0 obj
+<<
+/Type /Page
+/Parent 2 0 R
+/MediaBox [0 0 612 792]
+/Resources <<
+/Font <<
+/F1 7 0 R
+/F2 8 0 R
+/F3 9 0 R
+>>
+>>
+/Contents 12 0 R
+>>
+endobj
+
+6 0 obj
+<<
+/Type /Page
+/Parent 2 0 R
+/MediaBox [0 0 612 792]
+/Resources <<
+/Font <<
+/F1 7 0 R
+/F2 8 0 R
+/F3 9 0 R
+>>
+>>
+/Contents 13 0 R
+>>
+endobj
+
+7 0 obj
+<<
+/Type /Font
+/Subtype /Type1
+/BaseFont /Helvetica-Bold
+>>
+endobj
+
+8 0 obj
+<<
+/Type /Font
+/Subtype /Type1
+/BaseFont /Helvetica
+>>
+endobj
+
+9 0 obj
+<<
+/Type /Font
+/Subtype /Type1
+/BaseFont /Helvetica-Oblique
+>>
+endobj
+
+10 0 obj
+<<
+/Length 3200
+>>
+stream
+BT
+% Header with professional styling
+0.2 0.3 0.6 rg
+50 760 512 25 re
+f
+1 1 1 rg
+/F1 20 Tf
+60 768 Td
+(SUNDHAR KALEESWARAN) Tj
+
+% Contact Information Bar
+0.9 0.9 0.9 rg
+50 735 512 20 re
+f
+0 0 0 rg
+/F2 10 Tf
+60 740 Td
+(Associate Software Developer in Test | Tecsys Inc, Montreal, QC) Tj
+
+/F2 9 Tf
+60 720 Td
+(Email: sundhark603@gmail.com | Phone: (226) 961-9931 | Location: Ottawa, ON, Canada) Tj
+0 -12 Td
+(LinkedIn: linkedin.com/in/sundhar-k | GitHub: github.com/Sundhar1999) Tj
+
+% Professional Summary Section
+0 0 0 rg
+0 -35 Td
+/F1 16 Tf
+(EXECUTIVE SUMMARY) Tj
+0 -5 Td
+0.2 0.3 0.6 rg
+0 0 512 1 re
+f
+0 0 0 rg
+
+0 -20 Td
+/F2 11 Tf
+(Results-driven QA Performance & Automation Engineer with over three years of) Tj
+0 -14 Td
+(comprehensive experience in enterprise software quality assurance. Demonstrated) Tj
+0 -14 Td
+(expertise in performance optimization, test automation frameworks, and mission-critical) Tj
+0 -14 Td
+(system validation. Currently contributing to supply chain solutions at Tecsys Inc,) Tj
+0 -14 Td
+(supporting applications serving 700+ concurrent users in production environments.) Tj
+
+% Core Competencies Section
+0 -30 Td
+/F1 16 Tf
+(CORE COMPETENCIES) Tj
+0 -5 Td
+0.2 0.3 0.6 rg
+0 0 512 1 re
+f
+0 0 0 rg
+
+0 -20 Td
+/F1 12 Tf
+(Performance Engineering & Load Testing) Tj
+0 -16 Td
+/F2 10 Tf
+(• Advanced proficiency in JMeter and LoadRunner for enterprise-scale performance validation) Tj
+0 -12 Td
+(• Capacity planning and bottleneck analysis for high-traffic applications) Tj
+0 -12 Td
+(• Performance monitoring and optimization strategies for production systems) Tj
+
+0 -20 Td
+/F1 12 Tf
+(Test Automation & Framework Development) Tj
+0 -16 Td
+/F2 10 Tf
+(• Selenium WebDriver and Playwright expertise with 90% automation coverage achievement) Tj
+0 -12 Td
+(• Custom automation framework design and CI/CD pipeline integration) Tj
+0 -12 Td
+(• Cross-browser and cross-platform testing automation implementation) Tj
+
+0 -20 Td
+/F1 12 Tf
+(API Testing & Integration Validation) Tj
+0 -16 Td
+/F2 10 Tf
+(• Comprehensive REST and SOAP API testing using Postman and custom scripts) Tj
+0 -12 Td
+(• Microservices testing and service integration validation) Tj
+0 -12 Td
+(• API security testing and data integrity verification protocols) Tj
+
+0 -20 Td
+/F1 12 Tf
+(Quality Assurance & Process Optimization) Tj
+0 -16 Td
+/F2 10 Tf
+(• Enterprise-grade quality assurance methodologies and compliance standards) Tj
+0 -12 Td
+(• Risk assessment and mitigation strategies for software releases) Tj
+0 -12 Td
+(• Quality metrics analysis and continuous improvement initiatives) Tj
+ET
+endstream
+endobj
+
+11 0 obj
+<<
+/Length 3400
+>>
+stream
+BT
+% Professional Experience Header
+0 0 0 rg
+/F1 16 Tf
+50 750 Td
+(PROFESSIONAL EXPERIENCE) Tj
+0 -5 Td
+0.2 0.3 0.6 rg
+0 0 512 1 re
+f
+0 0 0 rg
+
+% Current Position
+0 -25 Td
+/F1 13 Tf
+(Associate Software Developer in Test) Tj
+400 0 Td
+/F3 11 Tf
+(2024 - Present) Tj
+-400 -15 Td
+/F1 11 Tf
+(Tecsys Inc | Montreal, QC, Canada) Tj
+
+0 -18 Td
+/F2 10 Tf
+(• Spearhead quality assurance initiatives for enterprise supply chain and distribution software) Tj
+0 -12 Td
+(• Execute comprehensive performance testing protocols for mission-critical business applications) Tj
+0 -12 Td
+(• Develop and maintain automated testing frameworks supporting continuous integration workflows) Tj
+0 -12 Td
+(• Collaborate with cross-functional teams to ensure software reliability and performance standards) Tj
+0 -12 Td
+(• Conduct risk assessments and provide technical recommendations for production deployments) Tj
+
+% Previous Position
+0 -25 Td
+/F1 13 Tf
+(Quality Engineer) Tj
+400 0 Td
+/F3 11 Tf
+(2021 - 2023) Tj
+-400 -15 Td
+/F1 11 Tf
+(LTIMindtree | Chennai, India) Tj
+
+0 -18 Td
+/F2 10 Tf
+(• Implemented comprehensive testing strategies for large-scale enterprise applications) Tj
+0 -12 Td
+(• Optimized application performance through systematic bottleneck identification and resolution) Tj
+0 -12 Td
+(• Established quality assurance protocols and testing standards across development teams) Tj
+0 -12 Td
+(• Mentored junior team members in testing methodologies and automation best practices) Tj
+
+% Education Section
+0 -35 Td
+/F1 16 Tf
+(EDUCATION & QUALIFICATIONS) Tj
+0 -5 Td
+0.2 0.3 0.6 rg
+0 0 512 1 re
+f
+0 0 0 rg
+
+0 -25 Td
+/F1 13 Tf
+(Master of Engineering - Electrical & Computer Engineering) Tj
+300 0 Td
+/F3 11 Tf
+(2023 - 2024) Tj
+-300 -15 Td
+/F1 11 Tf
+(University of Windsor | Windsor, ON, Canada) Tj
+0 -14 Td
+/F2 10 Tf
+(Specialization: Artificial Intelligence, Machine Learning, and Signal Processing) Tj
+0 -12 Td
+(Relevant Coursework: Advanced Algorithms, Computer Vision, Neural Networks) Tj
+
+0 -25 Td
+/F1 13 Tf
+(Bachelor of Engineering - Electronics & Communication Engineering) Tj
+250 0 Td
+/F3 11 Tf
+(2017 - 2021) Tj
+-250 -15 Td
+/F1 11 Tf
+(Sri Venkateswara College of Engineering | Chennai, India) Tj
+0 -14 Td
+/F2 10 Tf
+(Academic Excellence: Strong foundation in software engineering principles and methodologies) Tj
+
+% Key Achievements Section
+0 -35 Td
+/F1 16 Tf
+(KEY ACHIEVEMENTS & METRICS) Tj
+0 -5 Td
+0.2 0.3 0.6 rg
+0 0 512 1 re
+f
+0 0 0 rg
+
+0 -20 Td
+/F2 11 Tf
+(• Achieved 90% test automation coverage, reducing manual testing effort by 75%) Tj
+0 -14 Td
+(• Successfully validated performance for 700+ concurrent users in production environments) Tj
+0 -14 Td
+(• Implemented enterprise-level quality assurance processes improving release reliability) Tj
+0 -14 Td
+(• Developed AI-powered portfolio website demonstrating modern development capabilities) Tj
+0 -14 Td
+(• Contributed to multiple high-impact projects spanning healthcare, e-commerce, and fintech domains) Tj
+ET
+endstream
+endobj
+
+12 0 obj
+<<
+/Length 3600
+>>
+stream
+BT
+% Featured Projects Header
+0 0 0 rg
+/F1 16 Tf
+50 750 Td
+(FEATURED PROJECT PORTFOLIO) Tj
+0 -5 Td
+0.2 0.3 0.6 rg
+0 0 512 1 re
+f
+0 0 0 rg
+
+% Project 1
+0 -25 Td
+/F1 13 Tf
+(Smart Shop - Intelligent Food Price Analysis Platform) Tj
+0 -16 Td
+/F2 10 Tf
+(Comprehensive web application leveraging machine learning for food price comparison and market analysis.) Tj
+0 -14 Td
+(• Developed real-time data processing pipeline with advanced visualization dashboard) Tj
+0 -12 Td
+(• Implemented predictive algorithms for price forecasting and market trend analysis) Tj
+0 -12 Td
+(• Integrated responsive design ensuring optimal user experience across all devices) Tj
+0 -12 Td
+/F3 9 Tf
+(Technologies: React.js, Node.js, Python, MongoDB, Chart.js, Machine Learning APIs) Tj
+
+% Project 2
+0 -25 Td
+/F1 13 Tf
+(LeadConnect - AI-Powered Customer Relationship Management) Tj
+0 -16 Td
+/F2 10 Tf
+(Enterprise-grade lead management system incorporating artificial intelligence for enhanced customer insights.) Tj
+0 -14 Td
+(• Architected intelligent lead scoring algorithms with automated nurturing workflows) Tj
+0 -12 Td
+(• Developed comprehensive CRM integration with advanced analytics and reporting capabilities) Tj
+0 -12 Td
+(• Implemented machine learning models for customer behavior prediction and segmentation) Tj
+0 -12 Td
+/F3 9 Tf
+(Technologies: React.js, Node.js, PostgreSQL, AI/ML Libraries, RESTful APIs) Tj
+
+% Project 3
+0 -25 Td
+/F1 13 Tf
+(Eco-Finds - Sustainable E-commerce Ecosystem) Tj
+0 -16 Td
+/F2 10 Tf
+(Full-stack e-commerce platform promoting environmental sustainability through intelligent product curation.) Tj
+0 -14 Td
+(• Engineered advanced search and filtering system with sustainability impact metrics) Tj
+0 -12 Td
+(• Implemented secure user authentication and payment processing infrastructure) Tj
+0 -12 Td
+(• Developed comprehensive product lifecycle tracking and environmental impact assessment) Tj
+0 -12 Td
+/F3 9 Tf
+(Technologies: React.js, Express.js, MongoDB, Stripe API, Environmental Data APIs) Tj
+
+% Project 4
+0 -25 Td
+/F1 13 Tf
+(Brain-Computer Interface Research & Development) Tj
+0 -16 Td
+/F2 10 Tf
+(Advanced research project focusing on EEG signal processing and neural pattern recognition systems.) Tj
+0 -14 Td
+(• Developed sophisticated signal processing algorithms for real-time brain activity analysis) Tj
+0 -12 Td
+(• Implemented deep learning models for neural pattern classification and interpretation) Tj
+0 -12 Td
+(• Conducted comprehensive research on brain-computer interface applications and methodologies) Tj
+0 -12 Td
+/F3 9 Tf
+(Technologies: Python, TensorFlow, Signal Processing Libraries, MATLAB, Neural Networks) Tj
+
+% Project 5
+0 -25 Td
+/F1 13 Tf
+(Medical AI - Congestive Heart Failure Detection System) Tj
+0 -16 Td
+/F2 10 Tf
+(Healthcare-focused artificial intelligence system for early detection and diagnosis of cardiac conditions.) Tj
+0 -14 Td
+(• Developed advanced ECG signal analysis using convolutional neural networks) Tj
+0 -12 Td
+(• Implemented clinical data processing pipeline with diagnostic accuracy optimization) Tj
+0 -12 Td
+(• Conducted extensive validation testing ensuring medical-grade reliability and precision) Tj
+0 -12 Td
+/F3 9 Tf
+(Technologies: Python, TensorFlow, Medical Imaging Libraries, CNN, Healthcare APIs) Tj
+
+% Project 6
+0 -25 Td
+/F1 13 Tf
+(Enterprise Vehicle Loan Management System) Tj
+0 -16 Td
+/F2 10 Tf
+(Comprehensive financial management platform for automotive lending and loan processing operations.) Tj
+0 -14 Td
+(• Architected automated approval workflows with integrated risk assessment algorithms) Tj
+0 -12 Td
+(• Developed sophisticated financial calculation engine with comprehensive reporting dashboard) Tj
+0 -12 Td
+(• Implemented secure document management and compliance tracking systems) Tj
+0 -12 Td
+/F3 9 Tf
+(Technologies: Java, Spring Boot, MySQL, Angular, Financial APIs, Security Frameworks) Tj
+ET
+endstream
+endobj
+
+13 0 obj
+<<
+/Length 2800
+>>
+stream
+BT
+% Technical Skills Header
+0 0 0 rg
+/F1 16 Tf
+50 750 Td
+(TECHNICAL EXPERTISE & COMPETENCIES) Tj
+0 -5 Td
+0.2 0.3 0.6 rg
+0 0 512 1 re
+f
+0 0 0 rg
+
+% Testing & QA Skills
+0 -25 Td
+/F1 13 Tf
+(Quality Assurance & Testing Technologies) Tj
+0 -16 Td
+/F2 10 Tf
+(• Performance Testing: Apache JMeter, LoadRunner, K6, Artillery) Tj
+0 -12 Td
+(• Test Automation: Selenium WebDriver, Playwright, Cypress, TestComplete) Tj
+0 -12 Td
+(• API Testing: Postman, REST Assured, SoapUI, Insomnia) Tj
+0 -12 Td
+(• Testing Frameworks: TestNG, JUnit, Pytest, Mocha, Jest) Tj
+0 -12 Td
+(• Mobile Testing: Appium, Espresso, XCUITest) Tj
+
+% Programming Languages
+0 -20 Td
+/F1 13 Tf
+(Programming Languages & Frameworks) Tj
+0 -16 Td
+/F2 10 Tf
+(• Primary Languages: Java, Python, JavaScript, TypeScript) Tj
+0 -12 Td
+(• Additional Proficiency: C++, SQL, HTML5, CSS3, Shell Scripting) Tj
+0 -12 Td
+(• Frontend Frameworks: React.js, Angular, Vue.js, Bootstrap, Tailwind CSS) Tj
+0 -12 Td
+(• Backend Technologies: Node.js, Express.js, Spring Boot, Django, Flask) Tj
+
+% Database & Cloud
+0 -20 Td
+/F1 13 Tf
+(Database Management & Cloud Technologies) Tj
+0 -16 Td
+/F2 10 Tf
+(• Database Systems: MongoDB, MySQL, PostgreSQL, Oracle, Redis) Tj
+0 -12 Td
+(• Cloud Platforms: Amazon Web Services (AWS), Microsoft Azure, Google Cloud Platform) Tj
+0 -12 Td
+(• DevOps Tools: Jenkins, Docker, Kubernetes, GitLab CI/CD, GitHub Actions) Tj
+0 -12 Td
+(• Version Control: Git, GitHub, GitLab, Bitbucket, SVN) Tj
+
+% AI/ML Skills
+0 -20 Td
+/F1 13 Tf
+(Artificial Intelligence & Machine Learning) Tj
+0 -16 Td
+/F2 10 Tf
+(• Machine Learning Frameworks: TensorFlow, PyTorch, Scikit-learn, Keras) Tj
+0 -12 Td
+(• Deep Learning: Convolutional Neural Networks, Recurrent Neural Networks) Tj
+0 -12 Td
+(• Data Processing: Pandas, NumPy, Matplotlib, Seaborn, OpenCV) Tj
+0 -12 Td
+(• Specialized Areas: Signal Processing, Computer Vision, Natural Language Processing) Tj
+0 -12 Td
+(• Agentic AI: Large Language Models, Prompt Engineering, AI Automation) Tj
+
+% Development Tools
+0 -20 Td
+/F1 13 Tf
+(Development Environment & Tools) Tj
+0 -16 Td
+/F2 10 Tf
+(• Integrated Development Environments: IntelliJ IDEA, Visual Studio Code, Eclipse, PyCharm) Tj
+0 -12 Td
+(• Project Management: Jira, Confluence, Trello, Azure DevOps, Monday.com) Tj
+0 -12 Td
+(• Collaboration Tools: Slack, Microsoft Teams, Zoom, Google Workspace) Tj
+0 -12 Td
+(• Design & Prototyping: Figma, Adobe Creative Suite, Sketch, Canva) Tj
+
+% Professional Information
+0 -35 Td
+/F1 16 Tf
+(PROFESSIONAL AVAILABILITY & CONTACT) Tj
+0 -5 Td
+0.2 0.3 0.6 rg
+0 0 512 1 re
+f
+0 0 0 rg
+
+0 -20 Td
+/F1 12 Tf
+(Current Status & Availability) Tj
+0 -16 Td
+/F2 10 Tf
+(• Location: Ottawa, Ontario, Canada | Timezone: Eastern Standard Time (EST)) Tj
+0 -12 Td
+(• Employment Status: Full-time at Tecsys Inc, Available for consulting and collaboration) Tj
+0 -12 Td
+(• Remote Work: Experienced in distributed team collaboration and remote project delivery) Tj
+0 -12 Td
+(• Response Time: Professional inquiries answered within 24 hours) Tj
+
+0 -20 Td
+/F1 12 Tf
+(Professional Interests & Goals) Tj
+0 -16 Td
+/F2 10 Tf
+(• Continuous learning in emerging technologies and quality assurance methodologies) Tj
+0 -12 Td
+(• Contributing to open-source projects and knowledge sharing within the QA community) Tj
+0 -12 Td
+(• Exploring advanced AI/ML applications in software testing and quality assurance) Tj
+0 -12 Td
+(• Building innovative solutions that bridge the gap between technology and user experience) Tj
+
+% Footer
+0 -30 Td
+0.9 0.9 0.9 rg
+-50 0 612 20 re
+f
+0 0 0 rg
+/F3 8 Tf
+0 5 Td
+(This portfolio represents a comprehensive overview of professional capabilities and project experience.) Tj
+200 0 Td
+(Generated: 2024 | Confidential Document) Tj
+ET
+endstream
+endobj
+
+xref
+0 14
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000130 00000 n 
+0000000281 00000 n 
+0000000432 00000 n 
+0000000583 00000 n 
+0000000734 00000 n 
+0000000802 00000 n 
+0000000865 00000 n 
+0000000936 00000 n 
+0000004188 00000 n 
+0000007640 00000 n 
+0000011292 00000 n 
+trailer
+<<
+/Size 14
+/Root 1 0 R
+>>
+startxref
+14144
+%%EOF

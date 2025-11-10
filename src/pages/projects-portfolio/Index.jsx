@@ -885,9 +885,7 @@ const ProjectsPortfolio = () => {
               </h1>
             </div>
             <p className="text-xl text-text-secondary max-w-3xl mx-auto leading-relaxed">
-              Explore my portfolio of innovative projects spanning web development, data analytics, 
-              and creative design. Each project represents a unique challenge solved with modern 
-              technologies and best practices.
+              From algorithms to interfaces—creating intelligent systems that connect ideas with technology
             </p>
           </div>
 
