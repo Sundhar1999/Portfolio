@@ -10,11 +10,11 @@ const HeroSection = ({ onNavigate }) => {
     image: "/assets/images/Profilepic.jpg",
     imageAlt: "Professional headshot of QA automation engineer",
     tagline: "Ensuring software quality through performance testing, automation, and continuous improvement",
-    description: `Associate Software Developer in Test with 3+ years of excellence in performance engineering, load testing, and UI automation. I specialize in turning complex testing ecosystems into scalable solutions that enhance reliability and speed. Where automation meets excellence, I ensure every SaaS release performs with confidence — building systems that run flawlessly, scale effortlessly, and deliver quality with every release.`
+    description: `Associate Software Developer in Test with 3+ years of excellence in performance engineering, load testing, and UI automation. I specialize in turning complex testing ecosystems into scalable solutions that enhance reliability and speed. Where automation meets excellence, I ensure every SaaS release performs with confidence — building systems that run flawlessly, scale effortlessly with every release.`
   };
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 via-white to-purple-50 px-6 py-20">
+    <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 via-white to-purple-50 px-6 py-10">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute top-20 left-10 w-32 h-32 bg-primary rounded-full blur-3xl"></div>
@@ -22,7 +22,7 @@ const HeroSection = ({ onNavigate }) => {
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-60 h-60 bg-secondary rounded-full blur-3xl"></div>
       </div>
       <div className="relative z-10 max-w-6xl mx-auto">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="grid lg:grid-cols-2 gap-6 items-center">
           {/* Content */}
           <div className="text-center lg:text-left space-y-8">
             <div className="space-y-4">

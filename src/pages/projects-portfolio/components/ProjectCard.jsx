@@ -3,12 +3,14 @@ import Icon from '../../../components/AppIcon';
 import Image from '../../../components/AppImage';
 import Button from '../../../components/ui/Button';
 
-const ProjectCard = ({ project, onViewDetails, featured = false }) => {
+const ProjectCard = ({ project, onViewDetails, featured = false, viewMode = 'grid' }) => {
   const [isHovered, setIsHovered] = useState(false);
 
-  const cardClasses = featured 
-    ? "group relative bg-surface rounded-xl shadow-lg border border-border overflow-hidden hover-lift nav-transition col-span-2 row-span-2"
-    : "group relative bg-surface rounded-xl shadow-lg border border-border overflow-hidden hover-lift nav-transition";
+  const cardClasses = viewMode === 'list'
+    ? "group relative bg-surface rounded-xl shadow-lg border border-border overflow-hidden hover-lift nav-transition flex"
+    : featured 
+      ? "group relative bg-surface rounded-xl shadow-lg border border-border overflow-hidden hover-lift nav-transition col-span-2 row-span-2"
+      : "group relative bg-surface rounded-xl shadow-lg border border-border overflow-hidden hover-lift nav-transition";
 
   return (
     <div 
@@ -17,7 +19,11 @@ const ProjectCard = ({ project, onViewDetails, featured = false }) => {
       onMouseLeave={() => setIsHovered(false)}
     >
       {/* Project Image */}
-      <div className={`relative overflow-hidden ${featured ? 'h-64' : 'h-48'}`}>
+      <div className={`relative overflow-hidden ${
+        viewMode === 'list' 
+          ? 'w-80 h-48 flex-shrink-0' 
+          : featured ? 'h-64' : 'h-48'
+      }`}>
         <Image
           src={project?.image}
           alt={project?.imageAlt}
@@ -41,6 +47,20 @@ const ProjectCard = ({ project, onViewDetails, featured = false }) => {
                 }}
               >
                 Live Demo
+              </Button>
+            )}
+            {!project?.liveUrl && project?.documentationUrl && (
+              <Button
+                variant="secondary"
+                size="sm"
+                iconName="FileText"
+                iconPosition="left"
+                onClick={(e) => {
+                  e?.stopPropagation();
+                  window.open(project?.documentationUrl, '_blank');
+                }}
+              >
+                Documentation
               </Button>
             )}
             {project?.githubUrl && (
@@ -85,7 +105,11 @@ const ProjectCard = ({ project, onViewDetails, featured = false }) => {
         )}
       </div>
       {/* Project Content */}
-      <div className={`p-6 ${featured ? 'space-y-4' : 'space-y-3'}`}>
+      <div className={`p-6 ${
+        viewMode === 'list' 
+          ? 'flex-1 flex flex-col justify-between' 
+          : featured ? 'space-y-4' : 'space-y-3'
+      }`}>
         <div className="flex items-start justify-between">
           <h3 className={`font-semibold text-text-primary group-hover:text-primary nav-transition ${
             featured ? 'text-xl' : 'text-lg'

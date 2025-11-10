@@ -101,11 +101,27 @@ const ProjectModal = ({ project, isOpen, onClose, onNavigateProject }) => {
             {project?.performance && (
               <div>
                 <h3 className="text-lg font-semibold text-text-primary mb-3">Performance Metrics</h3>
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div className={`grid gap-4 ${
+                  Object.keys(project?.performance).length === 3 
+                    ? 'grid-cols-1 md:grid-cols-3' 
+                    : 'grid-cols-2 md:grid-cols-4'
+                }`}>
                   {Object.entries(project?.performance)?.map(([key, value]) => (
                     <div key={key} className="text-center p-4 bg-muted rounded-lg">
                       <p className="text-2xl font-bold text-primary">{value}</p>
                       <p className="text-xs text-text-secondary capitalize">{key?.replace(/([A-Z])/g, ' $1')}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+            {project?.["Food Sites Used"] && (
+              <div>
+                <h3 className="text-lg font-semibold text-text-primary mb-3">Food Sites Used</h3>
+                <div className="grid grid-cols-3 gap-4">
+                  {Object.keys(project?.["Food Sites Used"])?.map((site) => (
+                    <div key={site} className="text-center p-4 bg-muted rounded-lg">
+                      <p className="text-lg font-bold text-primary">{site}</p>
                     </div>
                   ))}
                 </div>
@@ -267,6 +283,17 @@ const ProjectModal = ({ project, isOpen, onClose, onNavigateProject }) => {
                 onClick={() => window.open(project?.githubUrl, '_blank')}
               >
                 Code
+              </Button>
+            )}
+            {project?.documentationUrl && (
+              <Button
+                variant="outline"
+                size="sm"
+                iconName="FileText"
+                iconPosition="left"
+                onClick={() => window.open(project?.documentationUrl, '_blank')}
+              >
+                Documentation
               </Button>
             )}
             <Button

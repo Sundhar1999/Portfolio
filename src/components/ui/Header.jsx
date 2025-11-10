@@ -48,12 +48,12 @@ const Header = () => {
               className="flex items-center cursor-pointer hover-lift"
               onClick={() => handleNavigation('/home-landing')}
             >
-              <div className="w-10 h-10 bg-gradient-to-br from-primary to-accent rounded-lg flex items-center justify-center mr-3">
-                <Icon name="Code2" size={24} color="white" />
+              <div className="w-12 h-12 rounded-lg flex items-center justify-center mr-3">
+                <img src="/assets/images/tecsys-logo.png" alt="Tecsys Logo" className="w-full h-full object-contain" />
               </div>
               <div className="hidden sm:block">
-                <h1 className="text-xl font-semibold text-text-primary">Sundhar K</h1>
-                <p className="text-xs text-text-secondary -mt-1">Associate Software Developer in Test</p>
+                <h1 className="text-xl font-semibold text-text-primary">Sundhar Kaleeswaran</h1>
+                <p className="text-xs text-text-secondary -mt-1">Associate Software Developer in Test<br/>Tecsys Inc, Montreal, QC</p>
               </div>
             </div>
 

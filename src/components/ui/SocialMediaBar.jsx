@@ -6,35 +6,21 @@ const SocialMediaBar = ({ className = '', variant = 'horizontal' }) => {
     {
       name: 'LinkedIn',
       icon: 'Linkedin',
-      url: 'https://linkedin.com/in/yourprofile',
+      url: 'https://www.linkedin.com/in/sundhar-k/',
       color: '#0077B5',
       followers: '2.5K'
     },
     {
       name: 'GitHub',
       icon: 'Github',
-      url: 'https://github.com/yourusername',
+      url: 'https://github.com/Sundhar1999/',
       color: '#333333',
       followers: '1.2K'
     },
     {
-      name: 'Twitter',
-      icon: 'Twitter',
-      url: 'https://twitter.com/yourusername',
-      color: '#1DA1F2',
-      followers: '890'
-    },
-    {
-      name: 'Dribbble',
-      icon: 'Dribbble',
-      url: 'https://dribbble.com/yourusername',
-      color: '#EA4C89',
-      followers: '456'
-    },
-    {
       name: 'Email',
       icon: 'Mail',
-      url: 'mailto:your.email@example.com',
+      url: 'mailto:sundhark603@gmail.com',
       color: '#EA4335',
       followers: null
     }

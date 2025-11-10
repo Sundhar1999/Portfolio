@@ -10,6 +10,7 @@ const SkillsMatrix = () => {
     { id: 'testing', label: 'Testing & QA', icon: 'TestTube' },
     { id: 'automation', label: 'Automation', icon: 'Bot' },
     { id: 'technical', label: 'Development', icon: 'Code2' },
+    { id: 'ai', label: 'AI & ML', icon: 'Brain' },
     { id: 'tools', label: 'Tools & Cloud', icon: 'Wrench' }
   ];
 
@@ -138,6 +139,116 @@ const SkillsMatrix = () => {
       examples: ["Responsive design", "CSS Grid & Flexbox", "Modern web standards"],
       icon: "Layout",
       color: "#E34F26"
+    },
+    {
+      id: 25,
+      name: "TensorFlow",
+      category: "ai",
+      experience: "2+ years",
+      certification: "Deep Learning Specialist",
+      examples: ["RNN-LSTM for ECG analysis", "Medical AI applications", "Neural network optimization"],
+      icon: "Brain",
+      color: "#FF6F00"
+    },
+    {
+      id: 26,
+      name: "Machine Learning",
+      category: "ai",
+      experience: "2+ years",
+      certification: "ML Engineer",
+      examples: ["CNN for signal processing", "Bayesian decoding algorithms", "Pattern recognition systems"],
+      icon: "Cpu",
+      color: "#4285F4"
+    },
+    {
+      id: 27,
+      name: "Deep Learning",
+      category: "ai",
+      experience: "2+ years",
+      certification: "Neural Networks",
+      examples: ["Congestive Heart Failure detection", "Brain-Computer Interface", "Medical diagnostics AI"],
+      icon: "Network",
+      color: "#34A853"
+    },
+    {
+      id: 28,
+      name: "Signal Processing",
+      category: "ai",
+      experience: "2+ years",
+      certification: "Biomedical Engineering",
+      examples: ["ECG signal analysis", "Wavelet transforms", "Medical data preprocessing"],
+      icon: "Activity",
+      color: "#EA4335"
+    },
+    {
+      id: 29,
+      name: "Vite",
+      category: "technical",
+      experience: "1+ years",
+      certification: "Modern Build Tools",
+      examples: ["Lightning-fast development", "AI-powered portfolio", "Hot module replacement"],
+      icon: "Zap",
+      color: "#646CFF"
+    },
+    {
+      id: 30,
+      name: "TailwindCSS",
+      category: "technical",
+      experience: "2+ years",
+      certification: "Utility-First CSS",
+      examples: ["Responsive design systems", "Component styling", "Design token management"],
+      icon: "Palette",
+      color: "#06B6D4"
+    },
+    {
+      id: 31,
+      name: "MongoDB",
+      category: "tools",
+      experience: "2+ years",
+      certification: "NoSQL Database",
+      examples: ["Document-based storage", "Scalable data solutions", "Aggregation pipelines"],
+      icon: "Database",
+      color: "#47A248"
+    },
+    {
+      id: 32,
+      name: "Django",
+      category: "technical",
+      experience: "2+ years",
+      certification: "Python Web Framework",
+      examples: ["E-commerce platforms", "Sustainable tech solutions", "Rapid development"],
+      icon: "Code2",
+      color: "#092E20"
+    },
+    {
+      id: 33,
+      name: "Flask",
+      category: "technical",
+      experience: "1+ years",
+      certification: "Microframework",
+      examples: ["AI-powered APIs", "Lightweight web services", "RESTful backends"],
+      icon: "Server",
+      color: "#000000"
+    },
+    {
+      id: 34,
+      name: "Tableau",
+      category: "tools",
+      experience: "1+ years",
+      certification: "Data Visualization",
+      examples: ["Interactive dashboards", "Educational data analysis", "Policy insights visualization"],
+      icon: "BarChart3",
+      color: "#E97627"
+    },
+    {
+      id: 35,
+      name: "Agentic AI",
+      category: "ai",
+      experience: "1+ years",
+      certification: "AI-Assisted Development",
+      examples: ["rocket.new collaboration", "Intelligent code generation", "Human-AI workflows"],
+      icon: "Sparkles",
+      color: "#8B5CF6"
     },
     // Tools & Cloud
     {

@@ -3,6 +3,7 @@ import Header from '../../components/ui/Header';
 import AIChatbot from '../../components/ui/AIChatbot';
 import SocialMediaBar from '../../components/ui/SocialMediaBar';
 import CTAButton from '../../components/ui/CTAButton';
+import Icon from '../../components/AppIcon';
 import SkillsMatrix from './components/SkillsMatrix';
 import ExperienceTimeline from './components/ExperienceTimeline';
 import SkillRecommendations from './components/SkillRecommendations';
@@ -12,9 +13,9 @@ const SkillsExperience = () => {
     <div className="min-h-screen bg-background">
       <Header />
       {/* Hero Section */}
-      <section className="px-8 py-16 bg-gradient-to-br from-primary/5 via-background to-accent/5">
+      <section className="px-8 py-8 bg-gradient-to-br from-primary/5 via-background to-accent/5">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-12">
+          <div className="text-center mb-6">
             <h1 className="text-4xl md:text-5xl font-bold text-text-primary mb-4">
               QA & <span className="text-gradient">Testing Expertise</span>
             </h1>
@@ -24,48 +25,81 @@ const SkillsExperience = () => {
             </p>
           </div>
 
-          {/* Quick Stats */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16">
-            <div className="text-center p-6 bg-surface rounded-lg border border-border hover:shadow-md nav-transition">
-              <div className="text-3xl font-bold text-primary mb-2">700+</div>
-              <div className="text-sm text-text-secondary">Concurrent Users Tested</div>
-            </div>
-            <div className="text-center p-6 bg-surface rounded-lg border border-border hover:shadow-md nav-transition">
-              <div className="text-3xl font-bold text-primary mb-2">70%</div>
-              <div className="text-sm text-text-secondary">Automation Efficiency</div>
-            </div>
-            <div className="text-center p-6 bg-surface rounded-lg border border-border hover:shadow-md nav-transition">
-              <div className="text-3xl font-bold text-primary mb-2">30%</div>
-              <div className="text-sm text-text-secondary">Performance Improvement</div>
-            </div>
-            <div className="text-center p-6 bg-surface rounded-lg border border-border hover:shadow-md nav-transition">
-              <div className="text-3xl font-bold text-primary mb-2">3+</div>
-              <div className="text-sm text-text-secondary">Years QA Experience</div>
+          {/* Expertise Cards */}
+          <div className="mb-8">
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+              <div className="group text-center p-6 bg-surface rounded-xl border border-border hover:shadow-lg nav-transition">
+                <div className="w-16 h-16 bg-gradient-to-br from-primary/10 to-accent/10 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 nav-transition">
+                  <Icon name="TestTube" size={28} color="var(--color-primary)" />
+                </div>
+                <h4 className="text-lg font-semibold text-text-primary mb-3 group-hover:text-primary nav-transition">
+                  Performance Testing
+                </h4>
+                <p className="text-text-secondary text-sm leading-relaxed">
+                  Expert in JMeter, Load Runner, supporting 700+ concurrent users in enterprise environments
+                </p>
+              </div>
+              
+              <div className="group text-center p-6 bg-surface rounded-xl border border-border hover:shadow-lg nav-transition">
+                <div className="w-16 h-16 bg-gradient-to-br from-primary/10 to-accent/10 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 nav-transition">
+                  <Icon name="Bot" size={28} color="var(--color-primary)" />
+                </div>
+                <h4 className="text-lg font-semibold text-text-primary mb-3 group-hover:text-primary nav-transition">
+                  Test Automation
+                </h4>
+                <p className="text-text-secondary text-sm leading-relaxed">
+                  Specialized in Selenium, Playwright, achieving 90% automation efficiency
+                </p>
+              </div>
+              
+              <div className="group text-center p-6 bg-surface rounded-xl border border-border hover:shadow-lg nav-transition">
+                <div className="w-16 h-16 bg-gradient-to-br from-primary/10 to-accent/10 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 nav-transition">
+                  <Icon name="Activity" size={28} color="var(--color-primary)" />
+                </div>
+                <h4 className="text-lg font-semibold text-text-primary mb-3 group-hover:text-primary nav-transition">
+                  API Testing
+                </h4>
+                <p className="text-text-secondary text-sm leading-relaxed">
+                  Comprehensive SOAP/REST API testing with Postman and automated validation
+                </p>
+              </div>
+              
+              <div className="group text-center p-6 bg-surface rounded-xl border border-border hover:shadow-lg nav-transition">
+                <div className="w-16 h-16 bg-gradient-to-br from-primary/10 to-accent/10 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 nav-transition">
+                  <Icon name="Zap" size={28} color="var(--color-primary)" />
+                </div>
+                <h4 className="text-lg font-semibold text-text-primary mb-3 group-hover:text-primary nav-transition">
+                  Quality Assurance
+                </h4>
+                <p className="text-text-secondary text-sm leading-relaxed">
+                  Ensuring software reliability through rigorous testing methodologies and best practices
+                </p>
+              </div>
             </div>
           </div>
         </div>
       </section>
       {/* Main Content */}
-      <section className="px-8 py-16">
+      <section className="px-8 py-8">
         <div className="max-w-7xl mx-auto">
           {/* Skills Matrix Section */}
-          <div className="mb-16">
+          <div className="mb-8">
             <SkillsMatrix />
           </div>
 
           {/* Experience Timeline Section */}
-          <div className="mb-16">
+          <div className="mb-8">
             <ExperienceTimeline />
           </div>
 
           {/* AI Recommendations Section */}
-          <div className="mb-16">
+          <div className="mb-8">
             <SkillRecommendations />
           </div>
 
           {/* Professional Summary */}
           <div className="bg-surface rounded-xl border border-border p-8">
-            <div className="text-center mb-8">
+            <div className="text-center mb-6">
               <h2 className="text-2xl font-semibold text-text-primary mb-4">Professional Summary</h2>
               <p className="text-text-secondary max-w-4xl mx-auto">
                 A dedicated QA Performance & Automation Engineer with 3+ years of experience in ensuring software quality through comprehensive testing strategies. 
@@ -109,14 +143,14 @@ const SkillsExperience = () => {
         </div>
       </section>
       {/* Social Media & CTA */}
-      <section className="px-8 py-16 bg-muted">
+      <section className="px-8 py-8 bg-muted">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-2xl font-semibold text-text-primary mb-4">Let's Connect</h2>
-          <p className="text-text-secondary mb-8">
+          <p className="text-text-secondary mb-6">
             Interested in working together or discussing opportunities? I'd love to hear from you.
           </p>
           
-          <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-8 mb-8">
+          <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-8 mb-6">
             <SocialMediaBar variant="horizontal" />
           </div>
           
