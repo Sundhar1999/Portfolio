@@ -3,10 +3,10 @@ import { BrowserRouter, Routes as RouterRoutes, Route } from "react-router-dom";
 import ScrollToTop from "components/ScrollToTop.jsx";
 import ErrorBoundary from "components/ErrorBoundary.jsx";
 import NotFound from "pages/NotFound.jsx";
-import HomeLanding from './pages/home-landing';
-import SkillsExperience from './pages/skills-experience';
-import ProjectsPortfolio from './pages/projects-portfolio';
-import ContactEngagement from './pages/contact-engagement';
+import HomeLanding from './pages/home-landing/Index.jsx';
+import SkillsExperience from './pages/skills-experience/index.jsx';
+import ProjectsPortfolio from './pages/projects-portfolio/Index.jsx';
+import ContactEngagement from './pages/contact-engagement/Index.jsx';
 import NotesIndicator from './components/ui/NotesIndicator';
 
 const Routes = () => {
