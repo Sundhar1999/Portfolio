@@ -317,10 +317,10 @@ const ContactEngagement = () => {
           >
             <motion.button
               onClick={() => {
-                const link = document.createElement('a');
-                link.href = '/assets/resume.pdf';
-                link.download = 'Resume.pdf';
-                link.click();
+                import('../../utils/portfolioPdfGenerator').then(({ generatePortfolioPDF }) => {
+                  const doc = generatePortfolioPDF();
+                  doc.save('Portfolio-Summary.pdf');
+                });
               }}
               className="inline-flex items-center space-x-2 bg-white text-blue-600 px-8 py-4 rounded-xl font-semibold shadow-lg"
               whileHover={{ 
@@ -331,7 +331,7 @@ const ContactEngagement = () => {
               whileTap={{ scale: 0.95 }}
             >
               <Icon name="Download" size={20} color="rgb(37 99 235)" />
-              <span>Download Resume</span>
+              <span>Portfolio Summary</span>
             </motion.button>
           </motion.div>
           

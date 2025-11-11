@@ -99,7 +99,7 @@ const Select = React.forwardRef(({
     const hasValue = multiple ? value?.length > 0 : value !== undefined && value !== '';
 
     return (
-        <div className={cn("relative", className)}>
+        <div className={cn("relative overflow-visible", className)} style={{zIndex: isOpen ? 99998 : 'auto'}}>
             {label && (
                 <label
                     htmlFor={selectId}
@@ -112,7 +112,7 @@ const Select = React.forwardRef(({
                     {required && <span className="text-destructive ml-1">*</span>}
                 </label>
             )}
-            <div className="relative">
+            <div className="relative overflow-visible">
                 <button
                     ref={ref}
                     id={selectId}
@@ -173,7 +173,7 @@ const Select = React.forwardRef(({
 
                 {/* Dropdown */}
                 {isOpen && (
-                    <div className="absolute z-50 w-full mt-1 bg-white text-black border border-border rounded-md shadow-md">
+                    <div className="absolute z-[99999] w-full mt-1 bg-white text-black border border-gray-300 rounded-md shadow-xl backdrop-blur-none" style={{zIndex: 99999}}>
                         {searchable && (
                             <div className="p-2 border-b">
                                 <div className="relative">

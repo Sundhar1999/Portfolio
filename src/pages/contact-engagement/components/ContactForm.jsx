@@ -10,7 +10,7 @@ import { EMAILJS_CONFIG } from '../../../config/emailjs';
 const ContactForm = () => {
   const [formData, setFormData] = useState({
     name: '',
-    email: '',
+    email: 'sundhark603@gmail.com',
     subject: '',
     messageType: '',
     message: ''
@@ -23,8 +23,7 @@ const ContactForm = () => {
     { value: 'collaboration', label: 'Collaboration Opportunity' },
     { value: 'hiring', label: 'Hiring Inquiry' },
     { value: 'general', label: 'General Inquiry' },
-    { value: 'project', label: 'Project Discussion' },
-    { value: 'consultation', label: 'Consultation Request' }
+    { value: 'project', label: 'Project Discussion' }
   ];
 
   const validateForm = () => {
@@ -82,19 +81,30 @@ const ContactForm = () => {
     setIsSubmitting(true);
 
     try {
-      await emailjs.send(
-        EMAILJS_CONFIG.SERVICE_ID,
-        EMAILJS_CONFIG.TEMPLATE_ID,
-        {
-          from_name: formData.name,
-          from_email: formData.email,
-          subject: formData.subject,
-          message_type: formData.messageType,
-          message: formData.message,
-          to_email: 'sundhark603@gmail.com'
-        },
-        EMAILJS_CONFIG.PUBLIC_KEY
+      // Define multiple recipients
+      const recipients = [
+        'sundhark603@gmail.com'
+      ];
+
+      // Send email to each recipient
+      const emailPromises = recipients.map(recipient => 
+        emailjs.send(
+          EMAILJS_CONFIG.SERVICE_ID,
+          EMAILJS_CONFIG.TEMPLATE_ID,
+          {
+            from_name: formData.name,
+            from_email: formData.email,
+            subject: formData.subject,
+            message_type: formData.messageType,
+            message: formData.message,
+            to_email: recipient
+          },
+          EMAILJS_CONFIG.PUBLIC_KEY
+        )
       );
+
+      // Wait for all emails to be sent
+      await Promise.all(emailPromises);
 
       setIsSubmitting(false);
       setIsSubmitted(true);
@@ -102,7 +112,7 @@ const ContactForm = () => {
       setTimeout(() => {
         setFormData({
           name: '',
-          email: '',
+          email: 'sundhark603@gmail.com',
           subject: '',
           messageType: '',
           message: ''
@@ -230,6 +240,8 @@ const ContactForm = () => {
                     onChange={(e) => handleInputChange('email', e?.target?.value)}
                     error={errors?.email}
                     required
+                    readOnly
+                    disabled
                   />
                 </motion.div>
               </motion.div>
@@ -257,17 +269,49 @@ const ContactForm = () => {
                 whileInView={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.6, delay: 0.5 }}
                 viewport={{ once: true }}
-                whileHover={{ scale: 1.02 }}
               >
-                <Select
-                  label="Message Type"
-                  placeholder="Select the type of inquiry"
-                  options={messageTypeOptions}
-                  value={formData?.messageType}
-                  onChange={(value) => handleInputChange('messageType', value)}
-                  error={errors?.messageType}
-                  required
-                />
+                <div className="space-y-3">
+                  <label className="block text-sm font-medium text-text-primary">
+                    Message Type <span className="text-red-400">*</span>
+                  </label>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    {messageTypeOptions.map((option) => (
+                      <motion.label
+                        key={option.value}
+                        className={`flex items-center space-x-3 p-3 rounded-lg border cursor-pointer transition-all ${
+                          formData?.messageType === option.value
+                            ? 'border-blue-500 bg-blue-500/10'
+                            : 'border-white/20 bg-white/5 hover:bg-white/10'
+                        }`}
+                        whileHover={{ scale: 1.02 }}
+                        whileTap={{ scale: 0.98 }}
+                      >
+                        <input
+                          type="radio"
+                          name="messageType"
+                          value={option.value}
+                          checked={formData?.messageType === option.value}
+                          onChange={(e) => handleInputChange('messageType', e.target.value)}
+                          className="w-4 h-4 text-blue-500 border-white/20 focus:ring-blue-500"
+                        />
+                        <span className="text-sm text-text-primary font-medium">
+                          {option.label}
+                        </span>
+                      </motion.label>
+                    ))}
+                  </div>
+                  {errors?.messageType && (
+                    <motion.p 
+                      className="text-sm text-red-400 flex items-center space-x-1"
+                      initial={{ opacity: 0, x: -10 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ duration: 0.3 }}
+                    >
+                      <Icon name="AlertCircle" size={14} color="rgb(248 113 113)" />
+                      <span>{errors?.messageType}</span>
+                    </motion.p>
+                  )}
+                </div>
               </motion.div>
 
               <motion.div 

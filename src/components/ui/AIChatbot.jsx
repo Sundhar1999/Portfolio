@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import Icon from '../AppIcon';
 import Button from './Button';
-import { getStreamingChatCompletion, getContextualWelcome, getPortfolioResponse, isOpenAIConfigured } from '../../services/openaiService';
+import { getStreamingChatCompletion, getContextualWelcome, getPortfolioResponse, isGeminiConfigured } from '../../services/geminiService';
 
 const AIChatbot = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -33,9 +33,14 @@ const AIChatbot = () => {
     try {
       let welcomeMessage;
       
-      if (isOpenAIConfigured()) {
-        welcomeMessage = await getContextualWelcome(location?.pathname);
-      } else {
+      try {
+        if (isGeminiConfigured()) {
+          welcomeMessage = await getContextualWelcome(location?.pathname);
+        } else {
+          welcomeMessage = getStaticContextualWelcome();
+        }
+      } catch (apiError) {
+        console.error('API error, falling back to static message:', apiError);
         welcomeMessage = getStaticContextualWelcome();
       }
 
@@ -94,7 +99,15 @@ const AIChatbot = () => {
     setConversationHistory(newHistory);
 
     try {
-      if (isOpenAIConfigured() && useStreaming) {
+      let geminiAvailable = false;
+      try {
+        geminiAvailable = isGeminiConfigured();
+      } catch (configError) {
+        console.error('Error checking Gemini configuration:', configError);
+        geminiAvailable = false;
+      }
+      
+      if (geminiAvailable && useStreaming) {
         // Streaming response
         const streamingMessage = {
           id: Date.now() + 1,
@@ -141,9 +154,14 @@ const AIChatbot = () => {
         // Standard response (fallback or non-streaming)
         let response;
         
-        if (isOpenAIConfigured()) {
-          response = await getPortfolioResponse(currentInput, location?.pathname);
-        } else {
+        try {
+          if (geminiAvailable) {
+            response = await getPortfolioResponse(currentInput, location?.pathname);
+          } else {
+            response = getStaticAIResponse(currentInput);
+          }
+        } catch (apiError) {
+          console.error('API error, using static response:', apiError);
           response = getStaticAIResponse(currentInput);
         }
 
@@ -234,7 +252,13 @@ const AIChatbot = () => {
             color="currentColor" 
           />
           {/* AI Indicator */}
-          {isOpenAIConfigured() && (
+          {(() => {
+            try {
+              return isGeminiConfigured();
+            } catch {
+              return false;
+            }
+          })() && (
             <div className="absolute -top-1 -right-1 w-4 h-4 bg-green-500 rounded-full border-2 border-white flex items-center justify-center">
               <div className="w-2 h-2 bg-white rounded-full animate-pulse"></div>
             </div>
@@ -253,10 +277,22 @@ const AIChatbot = () => {
               </div>
               <div>
                 <h3 className="font-semibold text-text-primary">
-                  AI Assistant {isOpenAIConfigured() ? '(GPT-5)' : '(Demo)'}
+                  AI Assistant {(() => {
+                    try {
+                      return isGeminiConfigured() ? '(Gemini Pro)' : '(Demo)';
+                    } catch {
+                      return '(Demo)';
+                    }
+                  })()}
                 </h3>
                 <p className="text-xs text-text-secondary">
-                  {isOpenAIConfigured() ? 'Powered by OpenAI' : 'Demo mode - Add API key for full features'}
+                  {(() => {
+                    try {
+                      return isGeminiConfigured() ? 'Powered by Google Gemini' : 'Demo mode - API integration available';
+                    } catch {
+                      return 'Demo mode - API integration available';
+                    }
+                  })()}
                 </p>
               </div>
             </div>
@@ -355,7 +391,13 @@ const AIChatbot = () => {
                 value={inputValue}
                 onChange={(e) => setInputValue(e?.target?.value)}
                 onKeyPress={handleKeyPress}
-                placeholder={isOpenAIConfigured() ? "Ask me anything..." : "Demo mode - Ask me anything..."}
+                placeholder={(() => {
+                  try {
+                    return isGeminiConfigured() ? "Ask me anything..." : "Demo mode - Ask me anything...";
+                  } catch {
+                    return "Demo mode - Ask me anything...";
+                  }
+                })()}
                 className="flex-1 px-3 py-2 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary text-sm"
                 disabled={isTyping}
               />
