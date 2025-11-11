@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import Icon from '../../../components/AppIcon';
 
 const FAQSection = () => {
@@ -7,7 +8,7 @@ const FAQSection = () => {
   const faqs = [
     {
       id: 1,
-      question: "What\'s your experience in QA and testing?",
+      question: "What's your experience in QA and testing?",
       answer: `I have 3+ years of experience as a QA Performance & Automation Engineer, currently working at Tecsys Inc. I specialize in performance testing with JMeter and LoadRunner, test automation using Selenium and Playwright, and comprehensive API testing with Postman. I've successfully supported enterprise applications with 700+ concurrent users.`
     },
     {
@@ -27,7 +28,7 @@ const FAQSection = () => {
     },
     {
       id: 5,
-      question: "What\'s your approach to API testing?",
+      question: "What's your approach to API testing?",
       answer: `I have extensive experience in both SOAP and REST API testing using Postman and automated validation scripts. I can design comprehensive test suites for API endpoints, validate data integrity, test error handling, and ensure proper authentication and authorization mechanisms.`
     },
     {
@@ -37,7 +38,7 @@ const FAQSection = () => {
     },
     {
       id: 7,
-      question: "What\'s your availability for consulting or collaboration?",
+      question: "What's your availability for consulting or collaboration?",
       answer: `I'm based in Ottawa, ON, Canada (EST timezone) and available for consulting, collaboration, and freelance projects. I typically respond within 24 hours and can accommodate different time zones for meetings. I'm open to both short-term consulting and longer-term project collaborations.`
     },
     {
@@ -52,50 +53,131 @@ const FAQSection = () => {
   };
 
   return (
-    <div className="bg-surface rounded-xl p-6 shadow-sm border border-border">
-      <div className="mb-6">
+    <motion.div 
+      className="backdrop-blur-sm bg-white/10 border border-white/20 rounded-xl p-6"
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8 }}
+      viewport={{ once: true }}
+    >
+      <motion.div 
+        className="mb-6"
+        initial={{ y: 20, opacity: 0 }}
+        whileInView={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.6, delay: 0.2 }}
+        viewport={{ once: true }}
+      >
         <h3 className="text-xl font-semibold text-text-primary mb-2 flex items-center space-x-2">
-          <Icon name="HelpCircle" size={24} color="var(--color-primary)" />
+          <motion.div
+            animate={{ 
+              rotate: [0, 10, -10, 0],
+              scale: [1, 1.1, 1]
+            }}
+            transition={{ 
+              duration: 2,
+              repeat: Infinity,
+              repeatType: "reverse"
+            }}
+          >
+            <Icon name="HelpCircle" size={24} color="rgb(59 130 246)" />
+          </motion.div>
           <span>Frequently Asked Questions</span>
         </h3>
         <p className="text-text-secondary">
           Common questions about my QA expertise and collaboration opportunities.
         </p>
-      </div>
+      </motion.div>
+
       <div className="space-y-4">
-        {faqs?.map((faq) => (
-          <div
+        {faqs?.map((faq, index) => (
+          <motion.div
             key={faq?.id}
-            className="border border-border rounded-lg overflow-hidden"
+            className="border border-white/20 rounded-lg overflow-hidden backdrop-blur-sm bg-white/5"
+            initial={{ y: 30, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.5, delay: 0.3 + index * 0.05 }}
+            viewport={{ once: true }}
+            whileHover={{ 
+              scale: 1.01,
+              transition: { duration: 0.2 }
+            }}
           >
-            <button
+            <motion.button
               onClick={() => toggleFAQ(faq?.id)}
-              className="w-full px-4 py-4 text-left flex items-center justify-between hover:bg-muted nav-transition"
+              className="w-full px-4 py-4 text-left flex items-center justify-between hover:bg-white/10 transition-all duration-300"
+              whileHover={{ backgroundColor: "rgba(255, 255, 255, 0.1)" }}
+              whileTap={{ scale: 0.99 }}
             >
               <span className="font-medium text-text-primary pr-4">
                 {faq?.question}
               </span>
-              <Icon
-                name={openFAQ === faq?.id ? 'ChevronUp' : 'ChevronDown'}
-                size={20}
-                color="var(--color-text-secondary)"
-                className="flex-shrink-0"
-              />
-            </button>
+              <motion.div
+                animate={{ rotate: openFAQ === faq?.id ? 180 : 0 }}
+                transition={{ duration: 0.3 }}
+              >
+                <Icon
+                  name="ChevronDown"
+                  size={20}
+                  color="var(--color-text-secondary)"
+                  className="flex-shrink-0"
+                />
+              </motion.div>
+            </motion.button>
             
-            {openFAQ === faq?.id && (
-              <div className="px-4 pb-4 border-t border-border">
-                <p className="text-text-secondary leading-relaxed pt-3">
-                  {faq?.answer}
-                </p>
-              </div>
-            )}
-          </div>
+            <AnimatePresence>
+              {openFAQ === faq?.id && (
+                <motion.div 
+                  className="border-t border-white/10"
+                  initial={{ height: 0, opacity: 0 }}
+                  animate={{ height: "auto", opacity: 1 }}
+                  exit={{ height: 0, opacity: 0 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <motion.div
+                    className="px-4 pb-4 pt-3"
+                    initial={{ y: -10, opacity: 0 }}
+                    animate={{ y: 0, opacity: 1 }}
+                    exit={{ y: -10, opacity: 0 }}
+                    transition={{ duration: 0.2, delay: 0.1 }}
+                  >
+                    <p className="text-text-secondary leading-relaxed">
+                      {faq?.answer}
+                    </p>
+                  </motion.div>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </motion.div>
         ))}
       </div>
-      <div className="mt-6 pt-6 border-t border-border">
-        <div className="flex items-center space-x-3 p-4 bg-muted rounded-lg">
-          <Icon name="MessageCircle" size={20} color="var(--color-primary)" />
+
+      <motion.div 
+        className="mt-6 pt-6 border-t border-white/10"
+        initial={{ y: 20, opacity: 0 }}
+        whileInView={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.6, delay: 0.8 }}
+        viewport={{ once: true }}
+      >
+        <motion.div 
+          className="flex items-center space-x-3 p-4 backdrop-blur-sm bg-white/10 rounded-lg border border-white/20"
+          whileHover={{ 
+            scale: 1.02,
+            transition: { duration: 0.2 }
+          }}
+        >
+          <motion.div
+            animate={{ 
+              rotate: [0, 360],
+              scale: [1, 1.1, 1]
+            }}
+            transition={{ 
+              duration: 3,
+              repeat: Infinity,
+              ease: "linear"
+            }}
+          >
+            <Icon name="MessageCircle" size={20} color="rgb(59 130 246)" />
+          </motion.div>
           <div>
             <p className="text-sm font-medium text-text-primary">
               Still have questions?
@@ -104,9 +186,9 @@ const FAQSection = () => {
               Feel free to reach out directly or use the AI chatbot for instant answers.
             </p>
           </div>
-        </div>
-      </div>
-    </div>
+        </motion.div>
+      </motion.div>
+    </motion.div>
   );
 };
 

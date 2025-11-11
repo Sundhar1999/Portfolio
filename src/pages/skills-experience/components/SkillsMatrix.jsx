@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import Icon from '../../../components/AppIcon';
 
 const SkillsMatrix = () => {
@@ -21,7 +22,7 @@ const SkillsMatrix = () => {
       name: "JMeter",
       category: "testing",
       experience: "3+ years",
-      certification: "Performance Testing Expert",
+      certification: "Load testing and performance optimization\nEnterprise application scalability",
       examples: ["Load testing 700+ concurrent users", "API performance optimization", "Bottleneck identification"],
       icon: "Zap",
       color: "#DC143C"
@@ -31,7 +32,7 @@ const SkillsMatrix = () => {
       name: "LoadRunner",
       category: "testing",
       experience: "2+ years",
-      certification: "Enterprise Performance Testing",
+      certification: "Large-scale application testing\nSAP and enterprise system validation",
       examples: ["Enterprise load testing", "SAP application testing", "5000+ user load scenarios"],
       icon: "Activity",
       color: "#FF6B35"
@@ -41,18 +42,17 @@ const SkillsMatrix = () => {
       name: "API Testing",
       category: "testing",
       experience: "3+ years",
-      certification: "API Testing Specialist",
+      certification: "REST and SOAP API validation\nAutomated backend testing workflows",
       examples: ["SOAP/REST API validation", "Postman automation", "Performance API testing"],
       icon: "Globe",
       color: "#FF851B"
     },
-
     {
       id: 5,
       name: "Manual Testing",
       category: "testing",
       experience: "4+ years",
-      certification: "QA Fundamentals",
+      certification: "Comprehensive testing methodologies\nQuality assurance best practices",
       examples: ["Functional testing", "Regression testing", "User acceptance testing"],
       icon: "TestTube",
       color: "#8E44AD"
@@ -63,8 +63,8 @@ const SkillsMatrix = () => {
       name: "Selenium",
       category: "automation",
       experience: "3+ years",
-      certification: "Test Automation Specialist",
-      examples: ["UI automation frameworks", "70% manual workload reduction", "Cross-browser testing"],
+      certification: "UI automation framework development\nAutomated testing workflows",
+      examples: ["UI automation frameworks", "70% manual workload reduction", "Automated testing workflows"],
       icon: "Bot",
       color: "#43B02A"
     },
@@ -73,19 +73,18 @@ const SkillsMatrix = () => {
       name: "Playwright",
       category: "automation",
       experience: "1+ years",
-      certification: "Modern Test Automation",
+      certification: "Cross-browser testing implementation\nAPI and UI automation integration",
       examples: ["Cross-browser automation", "API testing", "Modern web app testing"],
       icon: "Play",
       color: "#2ECC40"
     },
-
     // Development
     {
       id: 10,
       name: "Java",
       category: "technical",
       experience: "4+ years",
-      certification: "Oracle Java Certified",
+      certification: "Enterprise application development\nSpring Boot and microservices architecture",
       examples: ["Spring Boot applications", "RESTful API development", "Enterprise solutions"],
       icon: "Coffee",
       color: "#ED8B00"
@@ -95,7 +94,7 @@ const SkillsMatrix = () => {
       name: "Spring Boot",
       category: "technical",
       experience: "3+ years",
-      certification: "Spring Framework",
+      certification: "RESTful API development\nMicroservices and enterprise solutions",
       examples: ["Microservices architecture", "REST API development", "Enterprise applications"],
       icon: "Leaf",
       color: "#6DB33F"
@@ -105,7 +104,7 @@ const SkillsMatrix = () => {
       name: "React",
       category: "technical",
       experience: "2+ years",
-      certification: "Frontend Development",
+      certification: "Component-based UI development\nModern React application architecture",
       examples: ["Food Price Analysis UI", "Component-based architecture", "State management"],
       icon: "Code2",
       color: "#61DAFB"
@@ -115,7 +114,7 @@ const SkillsMatrix = () => {
       name: "JavaScript",
       category: "technical",
       experience: "3+ years",
-      certification: "Frontend Development",
+      certification: "Modern JavaScript development\nAsynchronous programming and ES6+",
       examples: ["DOM manipulation", "Async programming", "Modern ES6+ features"],
       icon: "Code",
       color: "#F7DF1E"
@@ -125,7 +124,7 @@ const SkillsMatrix = () => {
       name: "Python",
       category: "technical",
       experience: "2+ years",
-      certification: "Data Science & ML",
+      certification: "Signal processing and data analysis\nMachine learning model implementation",
       examples: ["BCI signal processing", "CNN implementation", "Data analysis automation"],
       icon: "Code",
       color: "#3776AB"
@@ -135,7 +134,7 @@ const SkillsMatrix = () => {
       name: "HTML/CSS",
       category: "technical",
       experience: "4+ years",
-      certification: "Web Development",
+      certification: "Responsive web design\nModern CSS and layout techniques",
       examples: ["Responsive design", "CSS Grid & Flexbox", "Modern web standards"],
       icon: "Layout",
       color: "#E34F26"
@@ -144,8 +143,8 @@ const SkillsMatrix = () => {
       id: 25,
       name: "TensorFlow",
       category: "ai",
-      experience: "2+ years",
-      certification: "Deep Learning Specialist",
+      experience: "1+ years",
+      certification: "Neural network implementation\nMedical AI and signal processing",
       examples: ["RNN-LSTM for ECG analysis", "Medical AI applications", "Neural network optimization"],
       icon: "Brain",
       color: "#FF6F00"
@@ -155,7 +154,7 @@ const SkillsMatrix = () => {
       name: "Machine Learning",
       category: "ai",
       experience: "2+ years",
-      certification: "ML Engineer",
+      certification: "Pattern recognition systems\nBayesian algorithms and CNN development",
       examples: ["CNN for signal processing", "Bayesian decoding algorithms", "Pattern recognition systems"],
       icon: "Cpu",
       color: "#4285F4"
@@ -165,7 +164,7 @@ const SkillsMatrix = () => {
       name: "Deep Learning",
       category: "ai",
       experience: "2+ years",
-      certification: "Neural Networks",
+      certification: "Brain-computer interface development\nMedical diagnostics and AI applications",
       examples: ["Congestive Heart Failure detection", "Brain-Computer Interface", "Medical diagnostics AI"],
       icon: "Network",
       color: "#34A853"
@@ -174,8 +173,8 @@ const SkillsMatrix = () => {
       id: 28,
       name: "Signal Processing",
       category: "ai",
-      experience: "2+ years",
-      certification: "Biomedical Engineering",
+      experience: "1+ years",
+      certification: "ECG signal analysis and processing\nMedical data preprocessing techniques",
       examples: ["ECG signal analysis", "Wavelet transforms", "Medical data preprocessing"],
       icon: "Activity",
       color: "#EA4335"
@@ -185,7 +184,7 @@ const SkillsMatrix = () => {
       name: "Vite",
       category: "technical",
       experience: "1+ years",
-      certification: "Modern Build Tools",
+      certification: "Lightning-fast development setup\nHot module replacement and optimization",
       examples: ["Lightning-fast development", "AI-powered portfolio", "Hot module replacement"],
       icon: "Zap",
       color: "#646CFF"
@@ -195,7 +194,7 @@ const SkillsMatrix = () => {
       name: "TailwindCSS",
       category: "technical",
       experience: "2+ years",
-      certification: "Utility-First CSS",
+      certification: "Design system implementation\nResponsive component styling",
       examples: ["Responsive design systems", "Component styling", "Design token management"],
       icon: "Palette",
       color: "#06B6D4"
@@ -205,7 +204,7 @@ const SkillsMatrix = () => {
       name: "MongoDB",
       category: "tools",
       experience: "2+ years",
-      certification: "NoSQL Database",
+      certification: "Document-based data storage\nScalable database solutions",
       examples: ["Document-based storage", "Scalable data solutions", "Aggregation pipelines"],
       icon: "Database",
       color: "#47A248"
@@ -215,7 +214,7 @@ const SkillsMatrix = () => {
       name: "Django",
       category: "technical",
       experience: "2+ years",
-      certification: "Python Web Framework",
+      certification: "Rapid web application development\nE-commerce and sustainable tech solutions",
       examples: ["E-commerce platforms", "Sustainable tech solutions", "Rapid development"],
       icon: "Code2",
       color: "#092E20"
@@ -225,7 +224,7 @@ const SkillsMatrix = () => {
       name: "Flask",
       category: "technical",
       experience: "1+ years",
-      certification: "Microframework",
+      certification: "Lightweight web service development\nAI-powered API implementation",
       examples: ["AI-powered APIs", "Lightweight web services", "RESTful backends"],
       icon: "Server",
       color: "#000000"
@@ -235,7 +234,7 @@ const SkillsMatrix = () => {
       name: "Tableau",
       category: "tools",
       experience: "1+ years",
-      certification: "Data Visualization",
+      certification: "Interactive dashboard creation\nEducational data analysis and insights",
       examples: ["Interactive dashboards", "Educational data analysis", "Policy insights visualization"],
       icon: "BarChart3",
       color: "#E97627"
@@ -245,7 +244,7 @@ const SkillsMatrix = () => {
       name: "Agentic AI",
       category: "ai",
       experience: "1+ years",
-      certification: "AI-Assisted Development",
+      certification: "Human-AI collaborative workflows\nIntelligent code generation and optimization",
       examples: ["rocket.new collaboration", "Intelligent code generation", "Human-AI workflows"],
       icon: "Sparkles",
       color: "#8B5CF6"
@@ -256,7 +255,7 @@ const SkillsMatrix = () => {
       name: "AWS",
       category: "tools",
       experience: "2+ years",
-      certification: "Cloud Practitioner",
+      certification: "Cloud infrastructure deployment\nScalable AWS solutions implementation",
       examples: ["EC2 deployment", "S3 storage", "Scalable cloud solutions"],
       icon: "Cloud",
       color: "#FF9900"
@@ -266,7 +265,7 @@ const SkillsMatrix = () => {
       name: "Docker",
       category: "tools",
       experience: "2+ years",
-      certification: "Container Specialist",
+      certification: "Application containerization\nDeployment automation and optimization",
       examples: ["Application containerization", "40% uptime improvement", "Deployment automation"],
       icon: "Package",
       color: "#2496ED"
@@ -276,7 +275,7 @@ const SkillsMatrix = () => {
       name: "PostgreSQL",
       category: "tools",
       experience: "3+ years",
-      certification: "Database Administrator",
+      certification: "Query optimization and performance\nDatabase design and architecture",
       examples: ["Query optimization", "Database design", "Performance tuning"],
       icon: "Database",
       color: "#336791"
@@ -286,7 +285,7 @@ const SkillsMatrix = () => {
       name: "MySQL",
       category: "tools",
       experience: "3+ years",
-      certification: "Database Management",
+      certification: "Relational database design\nData modeling and optimization",
       examples: ["Database design", "Query optimization", "Data modeling"],
       icon: "Database",
       color: "#4479A1"
@@ -296,7 +295,7 @@ const SkillsMatrix = () => {
       name: "Git",
       category: "tools",
       experience: "4+ years",
-      certification: "Version Control",
+      certification: "Collaborative development workflows\nBranch management and CI/CD integration",
       examples: ["Branch management", "Collaborative development", "CI/CD integration"],
       icon: "GitBranch",
       color: "#F05032"
@@ -306,7 +305,7 @@ const SkillsMatrix = () => {
       name: "Jenkins",
       category: "tools",
       experience: "2+ years",
-      certification: "CI/CD Pipeline",
+      certification: "Automated testing and deployment\nBuild orchestration and pipeline management",
       examples: ["Automated testing pipelines", "Build automation", "Deployment orchestration"],
       icon: "Workflow",
       color: "#D33833"
@@ -316,7 +315,7 @@ const SkillsMatrix = () => {
       name: "Postman",
       category: "tools",
       experience: "3+ years",
-      certification: "API Testing",
+      certification: "API documentation and automation\nCollection management and validation",
       examples: ["API documentation", "Automated API testing", "Collection management"],
       icon: "Send",
       color: "#FF6C37"
@@ -326,7 +325,7 @@ const SkillsMatrix = () => {
       name: "JIRA",
       category: "tools",
       experience: "3+ years",
-      certification: "Project Management",
+      certification: "Agile project tracking\nSprint planning and test case management",
       examples: ["Bug tracking", "Sprint planning", "Test case management"],
       icon: "Kanban",
       color: "#0052CC"
@@ -336,7 +335,7 @@ const SkillsMatrix = () => {
       name: "Confluence",
       category: "tools",
       experience: "2+ years",
-      certification: "Documentation",
+      certification: "Technical documentation creation\nKnowledge sharing and process documentation",
       examples: ["Test documentation", "Knowledge sharing", "Process documentation"],
       icon: "FileText",
       color: "#172B4D"
@@ -347,145 +346,231 @@ const SkillsMatrix = () => {
     ? skills 
     : skills?.filter(skill => skill?.category === selectedCategory);
 
-  const getProficiencyColor = (proficiency) => {
-    if (proficiency >= 90) return 'bg-emerald-500';
-    if (proficiency >= 80) return 'bg-blue-500';
-    if (proficiency >= 70) return 'bg-amber-500';
-    return 'bg-gray-400';
-  };
-
-  const getProficiencyLabel = (proficiency) => {
-    if (proficiency >= 90) return 'Expert';
-    if (proficiency >= 80) return 'Advanced';
-    if (proficiency >= 70) return 'Intermediate';
-    return 'Beginner';
-  };
-
   return (
-    <div className="bg-surface rounded-xl border border-border p-8">
-      <div className="mb-8">
-        <h2 className="text-2xl font-semibold text-text-primary mb-2">Skills & Expertise</h2>
-        <p className="text-text-secondary">Interactive overview of my technical and professional capabilities</p>
-      </div>
+    <motion.div 
+      className="backdrop-blur-sm bg-white/10 border border-white/20 rounded-xl p-8"
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8 }}
+      viewport={{ once: true }}
+    >
+      <motion.div 
+        className="mb-8"
+        initial={{ y: 20, opacity: 0 }}
+        whileInView={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.6, delay: 0.2 }}
+        viewport={{ once: true }}
+      >
+        <h2 className="text-2xl font-semibold mb-2" style={{ color: 'var(--color-text-primary)' }}>Skills & Expertise</h2>
+        <p style={{ color: 'var(--color-text-secondary)' }}>Interactive overview of my technical and professional capabilities</p>
+      </motion.div>
+
       {/* Category Filter */}
-      <div className="flex flex-wrap gap-3 mb-8">
-        {skillCategories?.map((category) => (
-          <button
+      <motion.div 
+        className="flex flex-wrap gap-3 mb-8"
+        initial={{ y: 20, opacity: 0 }}
+        whileInView={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.6, delay: 0.3 }}
+        viewport={{ once: true }}
+      >
+        {skillCategories?.map((category, index) => (
+          <motion.button
             key={category?.id}
             onClick={() => setSelectedCategory(category?.id)}
-            className={`flex items-center space-x-2 px-4 py-2 rounded-lg nav-transition hover-lift ${
+            className={`flex items-center space-x-2 px-4 py-2 rounded-lg transition-all duration-300 ${
               selectedCategory === category?.id
-                ? 'bg-primary text-primary-foreground shadow-sm'
-                : 'bg-muted text-text-secondary hover:text-text-primary hover:bg-border'
+                ? 'bg-gradient-to-r from-blue-500 to-purple-500 text-white shadow-lg'
+                : 'backdrop-blur-sm bg-white/10 border border-white/20 text-text-secondary hover:bg-white/20'
             }`}
+            initial={{ y: 20, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.4, delay: 0.4 + index * 0.05 }}
+            viewport={{ once: true }}
+            whileHover={{ 
+              scale: 1.05,
+              transition: { duration: 0.2 }
+            }}
+            whileTap={{ scale: 0.95 }}
           >
-            <Icon 
-              name={category?.icon} 
-              size={16} 
-              color={selectedCategory === category?.id ? 'currentColor' : 'var(--color-text-secondary)'} 
-            />
+            <motion.div
+              animate={selectedCategory === category?.id ? { rotate: 360 } : { rotate: 0 }}
+              transition={{ duration: 0.5 }}
+            >
+              <Icon 
+                name={category?.icon} 
+                size={16} 
+                color={selectedCategory === category?.id ? 'currentColor' : 'var(--color-text-secondary)'} 
+              />
+            </motion.div>
             <span className="font-medium">{category?.label}</span>
-          </button>
+          </motion.button>
         ))}
-      </div>
+      </motion.div>
+
       {/* Skills Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 relative">
-        {filteredSkills?.map((skill) => (
-          <div
-            key={skill?.id}
-            className="relative group bg-card border border-border rounded-lg p-6 hover:shadow-md nav-transition hover-lift cursor-pointer overflow-visible"
-            onMouseEnter={() => setHoveredSkill(skill?.id)}
-            onMouseLeave={() => setHoveredSkill(null)}
-            style={{ zIndex: hoveredSkill === skill?.id ? 100 : 1 }}
-          >
-            {/* Skill Header */}
-            <div className="flex items-center justify-between mb-4">
-              <div className="flex items-center space-x-3">
-                <div 
-                  className="w-10 h-10 rounded-lg flex items-center justify-center"
-                  style={{ backgroundColor: `${skill?.color}15` }}
-                >
-                  <Icon 
-                    name={skill?.icon} 
-                    size={20} 
-                    color={skill?.color} 
-                  />
-                </div>
-                <div>
-                  <h3 className="font-semibold text-text-primary">{skill?.name}</h3>
-                  <p className="text-sm text-text-secondary">{skill?.experience}</p>
-                </div>
-              </div>
-              <div className="text-right">
-                <div className="text-xs px-2 py-1 rounded-full bg-accent text-white">
-                  {skill?.experience}
-                </div>
-              </div>
-            </div>
-
-
-
-            {/* Certification Badge */}
-            <div className="flex items-center space-x-2 mb-3">
-              <Icon name="Award" size={14} color="var(--color-accent)" />
-              <span className="text-sm text-text-secondary">{skill?.certification}</span>
-            </div>
-
-
-          </div>
-        ))}
-      </div>
-      
-      {/* Dialog Overlay */}
-      {hoveredSkill && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-          <div className="bg-surface border border-primary rounded-xl p-8 max-w-md w-full mx-4 shadow-2xl animate-scale-in">
-            {(() => {
-              const skill = skills.find(s => s.id === hoveredSkill);
-              return (
-                <>
-                  <div className="flex items-center space-x-4 mb-6">
-                    <div 
-                      className="w-12 h-12 rounded-lg flex items-center justify-center"
-                      style={{ backgroundColor: `${skill?.color}15` }}
-                    >
-                      <Icon 
-                        name={skill?.icon} 
-                        size={24} 
-                        color={skill?.color} 
-                      />
-                    </div>
-                    <div>
-                      <h3 className="text-xl font-semibold text-text-primary">{skill?.name}</h3>
-                      <p className="text-text-secondary">{skill?.experience} experience</p>
-                    </div>
-                  </div>
-                  
-                  <div className="mb-6">
-                    <div className="flex items-center space-x-2 mb-3">
-                      <Icon name="Award" size={16} color="var(--color-accent)" />
-                      <span className="text-text-secondary">{skill?.certification}</span>
-                    </div>
-                  </div>
-
+      <motion.div 
+        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+        layout
+      >
+        <AnimatePresence mode="wait">
+          {filteredSkills?.map((skill, index) => (
+            <motion.div
+              key={skill?.id}
+              className="relative group backdrop-blur-sm bg-white/10 border border-white/20 rounded-lg p-6 hover:bg-white/20 transition-all duration-300 cursor-pointer"
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.9 }}
+              transition={{ duration: 0.4, delay: index * 0.05 }}
+              whileHover={{ 
+                y: -5,
+                transition: { duration: 0.3 }
+              }}
+              onMouseEnter={() => setHoveredSkill(skill?.id)}
+              onMouseLeave={() => setHoveredSkill(null)}
+              layout
+            >
+              {/* Skill Header */}
+              <div className="flex items-center justify-between mb-4">
+                <div className="flex items-center space-x-3">
+                  <motion.div 
+                    className="w-10 h-10 rounded-lg flex items-center justify-center"
+                    style={{ backgroundColor: `${skill?.color}15` }}
+                    whileHover={{ 
+                      scale: 1.1,
+                      rotate: 10,
+                      transition: { duration: 0.3 }
+                    }}
+                  >
+                    <Icon 
+                      name={skill?.icon} 
+                      size={20} 
+                      color={skill?.color} 
+                    />
+                  </motion.div>
                   <div>
-                    <h4 className="text-lg font-medium text-text-primary mb-4">Key Applications</h4>
-                    <ul className="space-y-3">
-                      {skill?.examples?.map((example, index) => (
-                        <li key={index} className="text-text-secondary flex items-start space-x-3">
-                          <Icon name="CheckCircle" size={16} color="var(--color-accent)" className="mt-0.5 flex-shrink-0" />
-                          <span>{example}</span>
-                        </li>
-                      ))}
-                    </ul>
+                    <h3 className="font-semibold" style={{ color: 'var(--color-text-primary)' }}>{skill?.name}</h3>
                   </div>
-                </>
-              );
-            })()} 
-          </div>
-        </div>
-      )}
-    </div>
+                </div>
+                <motion.div 
+                  className="text-right"
+                  whileHover={{ scale: 1.05 }}
+                >
+                  <div 
+                    className="text-xs px-2 py-1 rounded-full text-white"
+                    style={{ backgroundColor: skill?.color }}
+                  >
+                    {skill?.experience}
+                  </div>
+                </motion.div>
+              </div>
+
+              {/* Certification Badge */}
+              <motion.div 
+                className="flex items-center space-x-2 mb-3"
+                initial={{ x: -10, opacity: 0 }}
+                animate={{ x: 0, opacity: 1 }}
+                transition={{ duration: 0.4, delay: 0.2 }}
+              >
+                <Icon name="Award" size={14} color="rgb(59 130 246)" />
+                <span className="text-sm" style={{ color: 'var(--color-text-secondary)' }}>{skill?.certification}</span>
+              </motion.div>
+            </motion.div>
+          ))}
+        </AnimatePresence>
+      </motion.div>
+      
+      {/* Skill Detail Modal */}
+      <AnimatePresence>
+        {hoveredSkill && (
+          <motion.div 
+            className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.3 }}
+            onClick={() => setHoveredSkill(null)}
+          >
+            <motion.div 
+              className="backdrop-blur-sm bg-white/20 border border-white/30 rounded-xl p-8 max-w-md w-full mx-4 shadow-2xl"
+              initial={{ scale: 0.8, opacity: 0, y: 50 }}
+              animate={{ scale: 1, opacity: 1, y: 0 }}
+              exit={{ scale: 0.8, opacity: 0, y: 50 }}
+              transition={{ duration: 0.4, type: "spring", bounce: 0.3 }}
+              onClick={(e) => e.stopPropagation()}
+            >
+              {(() => {
+                const skill = skills.find(s => s.id === hoveredSkill);
+                return (
+                  <>
+                    <motion.div 
+                      className="flex items-center space-x-4 mb-6"
+                      initial={{ x: -20, opacity: 0 }}
+                      animate={{ x: 0, opacity: 1 }}
+                      transition={{ duration: 0.4, delay: 0.1 }}
+                    >
+                      <motion.div 
+                        className="w-12 h-12 rounded-lg flex items-center justify-center"
+                        style={{ backgroundColor: `${skill?.color}15` }}
+                        whileHover={{ 
+                          scale: 1.1,
+                          rotate: 360,
+                          transition: { duration: 0.6 }
+                        }}
+                      >
+                        <Icon 
+                          name={skill?.icon} 
+                          size={24} 
+                          color={skill?.color} 
+                        />
+                      </motion.div>
+                      <div>
+                        <h3 className="text-xl font-semibold" style={{ color: 'var(--color-text-primary)' }}>{skill?.name}</h3>
+                        <p style={{ color: 'var(--color-text-secondary)' }}>{skill?.experience} experience</p>
+                      </div>
+                    </motion.div>
+                    
+                    <motion.div 
+                      className="mb-6"
+                      initial={{ y: 20, opacity: 0 }}
+                      animate={{ y: 0, opacity: 1 }}
+                      transition={{ duration: 0.4, delay: 0.2 }}
+                    >
+                      <div className="flex items-center space-x-2 mb-3">
+                        <Icon name="Award" size={16} color="rgb(59 130 246)" />
+                        <span style={{ color: 'var(--color-text-secondary)' }}>{skill?.certification}</span>
+                      </div>
+                    </motion.div>
+
+                    <motion.div
+                      initial={{ y: 20, opacity: 0 }}
+                      animate={{ y: 0, opacity: 1 }}
+                      transition={{ duration: 0.4, delay: 0.3 }}
+                    >
+                      <h4 className="text-lg font-medium mb-4" style={{ color: 'var(--color-text-primary)' }}>Key Applications</h4>
+                      <ul className="space-y-3">
+                        {skill?.examples?.map((example, index) => (
+                          <motion.li 
+                            key={index} 
+                            className="flex items-start space-x-3"
+                            style={{ color: 'var(--color-text-primary)' }}
+                            initial={{ x: -10, opacity: 0 }}
+                            animate={{ x: 0, opacity: 1 }}
+                            transition={{ duration: 0.3, delay: 0.4 + index * 0.1 }}
+                          >
+                            <Icon name="CheckCircle" size={16} color="rgb(34 197 94)" className="mt-0.5 flex-shrink-0" />
+                            <span>{example}</span>
+                          </motion.li>
+                        ))}
+                      </ul>
+                    </motion.div>
+                  </>
+                );
+              })()}
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </motion.div>
   );
 };
 

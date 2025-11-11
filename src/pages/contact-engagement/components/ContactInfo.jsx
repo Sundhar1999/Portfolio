@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { motion } from 'framer-motion';
 import Icon from '../../../components/AppIcon';
 import Button from '../../../components/ui/Button';
 import { generatePortfolioPDF } from '../../../utils/portfolioPdfGenerator';
@@ -6,6 +7,7 @@ import QuickNoteModal from '../../../components/ui/QuickNoteModal';
 
 const ContactInfo = () => {
   const [isNoteModalOpen, setIsNoteModalOpen] = useState(false);
+  
   const contactMethods = [
     {
       type: 'email',
@@ -14,7 +16,8 @@ const ContactInfo = () => {
       icon: 'Mail',
       description: 'Best for detailed inquiries',
       action: () => window.location.href = 'mailto:sundhark603@gmail.com',
-      available: '24/7'
+      available: '24/7',
+      color: '#EA4335'
     },
     {
       type: 'phone',
@@ -23,7 +26,8 @@ const ContactInfo = () => {
       icon: 'Phone',
       description: 'Available for urgent matters',
       action: () => window.location.href = 'tel:+12269619931',
-      available: 'Mon-Fri, 9AM - 5PM EST'
+      available: 'Mon-Fri, 9AM - 5PM EST',
+      color: '#34A853'
     },
     {
       type: 'location',
@@ -32,7 +36,8 @@ const ContactInfo = () => {
       icon: 'MapPin',
       description: 'Open to remote work',
       action: null,
-      available: 'EST Timezone'
+      available: 'EST Timezone',
+      color: '#4285F4'
     },
     {
       type: 'linkedin',
@@ -41,7 +46,8 @@ const ContactInfo = () => {
       icon: 'Linkedin',
       description: 'Professional networking',
       action: () => window.open('https://www.linkedin.com/in/sundhar-k/', '_blank'),
-      available: 'Active daily'
+      available: 'Active daily',
+      color: '#0A66C2'
     }
   ];
 
@@ -61,31 +67,57 @@ const ContactInfo = () => {
   return (
     <div className="space-y-6">
       {/* Contact Methods */}
-      <div className="bg-surface rounded-xl p-6 shadow-sm border border-border">
-        <h3 className="text-xl font-semibold text-text-primary mb-4 flex items-center space-x-2">
-          <Icon name="Contact" size={24} color="var(--color-primary)" />
+      <motion.div 
+        className="backdrop-blur-sm bg-white/10 border border-white/20 rounded-xl p-6"
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: true }}
+      >
+        <motion.h3 
+          className="text-xl font-semibold text-text-primary mb-4 flex items-center space-x-2"
+          initial={{ x: -20, opacity: 0 }}
+          whileInView={{ x: 0, opacity: 1 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          viewport={{ once: true }}
+        >
+          <motion.div
+            whileHover={{ rotate: 360 }}
+            transition={{ duration: 0.6 }}
+          >
+            <Icon name="Contact" size={24} color="rgb(59 130 246)" />
+          </motion.div>
           <span>Get In Touch</span>
-        </h3>
+        </motion.h3>
         
         <div className="space-y-4">
-          {contactMethods?.map((method) => (
-            <div
+          {contactMethods?.map((method, index) => (
+            <motion.div
               key={method?.type}
-              className={`flex items-center justify-between p-4 rounded-lg border border-border hover:border-primary nav-transition ${
-                method?.action ? 'cursor-pointer hover:bg-muted' : ''
+              className={`flex items-center justify-between p-4 rounded-lg border border-white/20 hover:border-blue-500/50 transition-all duration-300 ${
+                method?.action ? 'cursor-pointer hover:bg-white/10' : ''
               }`}
               onClick={method?.action}
+              initial={{ x: -30, opacity: 0 }}
+              whileInView={{ x: 0, opacity: 1 }}
+              transition={{ duration: 0.6, delay: 0.3 + index * 0.1 }}
+              viewport={{ once: true }}
+              whileHover={{ 
+                scale: method?.action ? 1.02 : 1,
+                transition: { duration: 0.2 }
+              }}
             >
               <div className="flex items-center space-x-3">
-                <div className="w-10 h-10 bg-white border border-gray-200 rounded-lg flex items-center justify-center">
-                  <Icon name={method?.icon} size={20} color={
-                    method?.type === 'email' ? '#EA4335' : // Gmail red
-                    method?.type === 'phone' ? '#34A853' : // Phone green  
-                    method?.type === 'location' ? '#4285F4' : // Maps blue
-                    method?.type === 'linkedin' ? '#0A66C2' : // LinkedIn blue
-                    'var(--color-primary)'
-                  } />
-                </div>
+                <motion.div 
+                  className="w-10 h-10 bg-white/20 border border-white/30 rounded-lg flex items-center justify-center"
+                  whileHover={{ 
+                    scale: 1.1,
+                    rotate: 5,
+                    transition: { duration: 0.3 }
+                  }}
+                >
+                  <Icon name={method?.icon} size={20} color={method?.color} />
+                </motion.div>
                 <div>
                   <p className="font-medium text-text-primary">{method?.label}</p>
                   <p className="text-sm text-text-secondary">{method?.value}</p>
@@ -95,106 +127,187 @@ const ContactInfo = () => {
               <div className="text-right">
                 <p className="text-xs text-text-secondary">{method?.available}</p>
                 {method?.action && (
-                  <Icon name="ExternalLink" size={16} color="var(--color-text-secondary)" />
+                  <motion.div
+                    whileHover={{ scale: 1.2 }}
+                    transition={{ duration: 0.2 }}
+                  >
+                    <Icon name="ExternalLink" size={16} color="var(--color-text-secondary)" />
+                  </motion.div>
                 )}
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
-      </div>
+      </motion.div>
+
       {/* Response Times */}
-      <div className="bg-surface rounded-xl p-6 shadow-sm border border-border">
-        <h3 className="text-lg font-semibold text-text-primary mb-4 flex items-center space-x-2">
-          <Icon name="Clock" size={20} color="var(--color-accent)" />
+      <motion.div 
+        className="backdrop-blur-sm bg-white/10 border border-white/20 rounded-xl p-6"
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.1 }}
+        viewport={{ once: true }}
+      >
+        <motion.h3 
+          className="text-lg font-semibold text-text-primary mb-4 flex items-center space-x-2"
+          initial={{ x: -20, opacity: 0 }}
+          whileInView={{ x: 0, opacity: 1 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          viewport={{ once: true }}
+        >
+          <motion.div
+            animate={{ rotate: [0, 360] }}
+            transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
+          >
+            <Icon name="Clock" size={20} color="rgb(168 85 247)" />
+          </motion.div>
           <span>Response Times</span>
-        </h3>
+        </motion.h3>
         
         <div className="grid grid-cols-2 gap-4">
-          {Object.entries(responseInfo)?.map(([method, time]) => (
-            <div key={method} className="text-center p-3 bg-muted rounded-lg">
+          {Object.entries(responseInfo)?.map(([method, time], index) => (
+            <motion.div 
+              key={method} 
+              className="text-center p-3 backdrop-blur-sm bg-white/10 rounded-lg border border-white/20"
+              initial={{ scale: 0, opacity: 0 }}
+              whileInView={{ scale: 1, opacity: 1 }}
+              transition={{ duration: 0.5, delay: 0.3 + index * 0.1 }}
+              viewport={{ once: true }}
+              whileHover={{ 
+                scale: 1.05,
+                transition: { duration: 0.2 }
+              }}
+            >
               <p className="text-sm font-medium text-text-primary capitalize">{method}</p>
-              <p className="text-lg font-semibold text-accent">{time}</p>
-            </div>
+              <p className="text-lg font-semibold text-purple-400">{time}</p>
+            </motion.div>
           ))}
         </div>
-      </div>
+      </motion.div>
+
       {/* Availability Info */}
-      <div className="bg-surface rounded-xl p-6 shadow-sm border border-border">
-        <h3 className="text-lg font-semibold text-text-primary mb-4 flex items-center space-x-2">
-          <Icon name="Calendar" size={20} color="var(--color-success)" />
+      <motion.div 
+        className="backdrop-blur-sm bg-white/10 border border-white/20 rounded-xl p-6"
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.2 }}
+        viewport={{ once: true }}
+      >
+        <motion.h3 
+          className="text-lg font-semibold text-text-primary mb-4 flex items-center space-x-2"
+          initial={{ x: -20, opacity: 0 }}
+          whileInView={{ x: 0, opacity: 1 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          viewport={{ once: true }}
+        >
+          <motion.div
+            whileHover={{ scale: 1.2 }}
+            transition={{ duration: 0.3 }}
+          >
+            <Icon name="Calendar" size={20} color="rgb(34 197 94)" />
+          </motion.div>
           <span>Availability</span>
-        </h3>
+        </motion.h3>
         
         <div className="space-y-3">
-          <div className="flex items-start space-x-3">
-            <Icon name="Globe" size={16} color="var(--color-text-secondary)" className="mt-0.5" />
-            <div>
-              <p className="text-sm font-medium text-text-primary">Timezone</p>
-              <p className="text-sm text-text-secondary">{availability?.timezone}</p>
-            </div>
-          </div>
-          
-          <div className="flex items-start space-x-3">
-            <Icon name="Clock" size={16} color="var(--color-text-secondary)" className="mt-0.5" />
-            <div>
-              <p className="text-sm font-medium text-text-primary">Working Hours</p>
-              <p className="text-sm text-text-secondary">{availability?.workingHours}</p>
-            </div>
-          </div>
-          
-          <div className="flex items-start space-x-3">
-            <Icon name="MessageSquare" size={16} color="var(--color-text-secondary)" className="mt-0.5" />
-            <div>
-              <p className="text-sm font-medium text-text-primary">Preferred Method</p>
-              <p className="text-sm text-text-secondary">{availability?.preferredMethod}</p>
-            </div>
-          </div>
+          {[
+            { icon: "Globe", label: "Timezone", value: availability?.timezone },
+            { icon: "Clock", label: "Working Hours", value: availability?.workingHours },
+            { icon: "MessageSquare", label: "Preferred Method", value: availability?.preferredMethod }
+          ].map((item, index) => (
+            <motion.div 
+              key={index}
+              className="flex items-start space-x-3"
+              initial={{ x: -20, opacity: 0 }}
+              whileInView={{ x: 0, opacity: 1 }}
+              transition={{ duration: 0.5, delay: 0.3 + index * 0.1 }}
+              viewport={{ once: true }}
+            >
+              <motion.div
+                whileHover={{ rotate: 360 }}
+                transition={{ duration: 0.6 }}
+              >
+                <Icon name={item.icon} size={16} color="var(--color-text-secondary)" className="mt-0.5" />
+              </motion.div>
+              <div>
+                <p className="text-sm font-medium text-text-primary">{item.label}</p>
+                <p className="text-sm text-text-secondary">{item.value}</p>
+              </div>
+            </motion.div>
+          ))}
         </div>
-      </div>
+      </motion.div>
+
       {/* Quick Actions */}
-      <div className="bg-surface rounded-xl p-6 shadow-sm border border-border">
-        <h3 className="text-lg font-semibold text-text-primary mb-4">Quick Actions</h3>
+      <motion.div 
+        className="backdrop-blur-sm bg-white/10 border border-white/20 rounded-xl p-6"
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.3 }}
+        viewport={{ once: true }}
+      >
+        <motion.h3 
+          className="text-lg font-semibold text-text-primary mb-4"
+          initial={{ y: 20, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          viewport={{ once: true }}
+        >
+          Quick Actions
+        </motion.h3>
         
         <div className="space-y-3">
-          <Button
-            variant="outline"
-            fullWidth
-            iconName="MessageSquare"
-            iconPosition="left"
-            onClick={() => setIsNoteModalOpen(true)}
-          >
-            Leave a Note
-          </Button>
-          
-          <Button
-            variant="outline"
-            fullWidth
-            iconName="Download"
-            iconPosition="left"
-            onClick={() => {
-              const link = document.createElement('a');
-              link.href = '/assets/resume.pdf';
-              link.download = 'Sundhar_Kaleeswaran_Resume.pdf';
-              link?.click();
-            }}
-          >
-            Download Resume
-          </Button>
-          
-          <Button
-            variant="outline"
-            fullWidth
-            iconName="FileText"
-            iconPosition="left"
-            onClick={() => {
-              const pdf = generatePortfolioPDF();
-              pdf.save('Sundhar_Kaleeswaran_Portfolio.pdf');
-            }}
-          >
-            View Portfolio PDF
-          </Button>
+          {[
+            {
+              icon: "MessageSquare",
+              text: "Leave a Note",
+              action: () => setIsNoteModalOpen(true)
+            },
+            {
+              icon: "Download",
+              text: "Download Resume",
+              action: () => {
+                const link = document.createElement('a');
+                link.href = '/assets/resume.pdf';
+                link.download = 'Sundhar_Kaleeswaran_Resume.pdf';
+                link?.click();
+              }
+            },
+            {
+              icon: "FileText",
+              text: "View Portfolio PDF",
+              action: () => {
+                const pdf = generatePortfolioPDF();
+                pdf.save('Sundhar_Kaleeswaran_Portfolio.pdf');
+              }
+            }
+          ].map((button, index) => (
+            <motion.div
+              key={index}
+              initial={{ y: 20, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.5, delay: 0.3 + index * 0.1 }}
+              viewport={{ once: true }}
+            >
+              <motion.div
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+              >
+                <Button
+                  variant="outline"
+                  fullWidth
+                  iconName={button.icon}
+                  iconPosition="left"
+                  onClick={button.action}
+                  className="backdrop-blur-sm bg-white/10 border-white/20 hover:bg-white/20 text-text-primary"
+                >
+                  {button.text}
+                </Button>
+              </motion.div>
+            </motion.div>
+          ))}
         </div>
-      </div>
+      </motion.div>
       
       <QuickNoteModal 
         isOpen={isNoteModalOpen} 

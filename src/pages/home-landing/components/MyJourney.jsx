@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import Icon from '../../../components/AppIcon';
 
 const MyJourney = () => {
@@ -12,7 +13,8 @@ const MyJourney = () => {
       description: 'Bachelor of Engineering in Computer Science',
       logo: '/assets/images/SVCE-logo.png',
       color: 'from-orange-500 to-red-500',
-      flag: '🇮🇳'
+      flag: '🇮🇳',
+      bgColor: 'from-orange-50 to-red-50 dark:from-orange-400/30 dark:to-red-400/30'
     },
     {
       id: 2,
@@ -23,7 +25,8 @@ const MyJourney = () => {
       description: 'Started professional journey in Quality Assurance and Testing',
       logo: '/assets/images/ltimindtree-logo.jfif',
       color: 'from-blue-500 to-indigo-500',
-      flag: '🇮🇳'
+      flag: '🇮🇳',
+      bgColor: 'from-blue-50 to-indigo-50 dark:from-blue-400/30 dark:to-indigo-400/30'
     },
     {
       id: 3,
@@ -34,7 +37,8 @@ const MyJourney = () => {
       description: 'Advanced studies in Computer Science',
       logo: '/assets/images/uwindsor-logo.jfif',
       color: 'from-purple-500 to-pink-500',
-      flag: '🇨🇦'
+      flag: '🇨🇦',
+      bgColor: 'from-purple-50 to-pink-50 dark:from-purple-400/30 dark:to-pink-400/30'
     },
     {
       id: 4,
@@ -45,112 +49,328 @@ const MyJourney = () => {
       description: 'Leading QA automation and performance testing',
       logo: '/assets/images/tecsys-logo.png',
       color: 'from-green-500 to-emerald-500',
-      flag: '🇨🇦'
+      flag: '🇨🇦',
+      bgColor: 'from-green-50 to-emerald-50 dark:from-green-400/30 dark:to-emerald-400/30'
     }
   ];
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.3,
+        delayChildren: 0.2
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { y: 50, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        duration: 0.6,
+        ease: "easeOut"
+      }
+    }
+  };
+
+  const cardVariants = {
+    hidden: { scale: 0.8, opacity: 0, rotateY: -15 },
+    visible: {
+      scale: 1,
+      opacity: 1,
+      rotateY: 0,
+      transition: {
+        duration: 0.8,
+        ease: "backOut"
+      }
+    }
+  };
+
   return (
-    <section className="pt-8 pb-16 px-6 bg-gradient-to-br from-slate-50 to-blue-50">
+    <motion.section 
+      className="pt-8 pb-16 px-6 bg-gradient-to-br from-indigo-50/50 via-blue-50/50 to-cyan-50/50 dark:from-indigo-900/20 dark:via-blue-900/20 dark:to-cyan-900/20 backdrop-blur-sm"
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.2 }}
+      variants={containerVariants}
+    >
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-text-primary mb-4">
-            My <span className="text-gradient">Journey</span>
-          </h2>
-          <p className="text-lg text-text-secondary max-w-2xl mx-auto mb-6">
+        <motion.div className="text-center mb-16" variants={itemVariants}>
+          <motion.h2 
+            className="text-3xl md:text-4xl font-bold text-gray-800 dark:text-gray-100 mb-4"
+            variants={itemVariants}
+          >
+            My <motion.span 
+              className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent"
+              animate={{
+                backgroundPosition: ['0%', '100%', '0%']
+              }}
+              transition={{
+                duration: 3,
+                repeat: Infinity,
+                ease: "linear"
+              }}
+            >
+              Journey
+            </motion.span>
+          </motion.h2>
+          <motion.p 
+            className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto mb-6"
+            variants={itemVariants}
+          >
             From the vibrant tech scene of Chennai to the innovation hubs of Canada - 
             a journey of growth, learning, and professional excellence.
-          </p>
-          <div className="flex items-center justify-center space-x-4 text-2xl">
-            <span>🇮🇳</span>
-            <Icon name="ArrowRight" size={20} color="var(--color-primary)" />
-            <span>🇨🇦</span>
-          </div>
-        </div>
+          </motion.p>
+          <motion.div 
+            className="flex items-center justify-center space-x-4 text-3xl"
+            variants={itemVariants}
+          >
+            <motion.span
+              animate={{ scale: [1, 1.2, 1] }}
+              transition={{ duration: 2, repeat: Infinity, delay: 0 }}
+            >
+              🇮🇳
+            </motion.span>
+            <motion.div
+              animate={{ x: [0, 10, 0] }}
+              transition={{ duration: 2, repeat: Infinity }}
+            >
+              <Icon name="ArrowRight" size={24} color="#3B82F6" />
+            </motion.div>
+            <motion.span
+              animate={{ scale: [1, 1.2, 1] }}
+              transition={{ duration: 2, repeat: Infinity, delay: 1 }}
+            >
+              🇨🇦
+            </motion.span>
+          </motion.div>
+        </motion.div>
 
         {/* Journey Timeline */}
         <div className="relative">
-          {/* Connection Line */}
-          <div className="hidden md:block absolute top-1/2 left-0 right-0 h-1 bg-gradient-to-r from-orange-200 via-blue-200 via-purple-200 to-green-200 transform -translate-y-1/2 z-0"></div>
-          
           {/* Journey Steps */}
-          <div className="grid md:grid-cols-4 gap-8 relative z-10">
+          <div className="grid md:grid-cols-4 gap-8 relative" style={{ zIndex: 10 }}>
             {journeySteps.map((step, index) => (
-              <div key={step.id} className="group relative">
+              <motion.div 
+                key={step.id} 
+                className="group relative"
+                variants={cardVariants}
+                whileHover={{ y: -10, scale: 1.02 }}
+                transition={{ type: "spring", stiffness: 300 }}
+              >
                 {/* Card */}
-                <div className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl nav-transition border border-gray-100 group-hover:-translate-y-2">
+                <motion.div 
+                  className="group text-center p-6 bg-white/60 dark:bg-gray-800/60 backdrop-blur-sm rounded-3xl border border-white/20 dark:border-gray-700/20 shadow-lg"
+                  whileHover={{
+                    boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)"
+                  }}
+                >
                   {/* Header */}
                   <div className="text-center mb-4">
-                    <div className="w-16 h-16 bg-white rounded-xl flex items-center justify-center mx-auto mb-3 group-hover:scale-110 nav-transition shadow-lg border border-gray-200">
+                    <motion.div 
+                      className="w-20 h-20 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-2xl flex items-center justify-center mx-auto mb-3 shadow-lg border border-white/50 dark:border-gray-700/50"
+                      whileHover={{ 
+                        rotate: [0, -5, 5, 0],
+                        scale: 1.1
+                      }}
+                      transition={{ duration: 0.6 }}
+                    >
                       <img 
                         src={step.logo} 
                         alt={`${step.title} logo`}
-                        className="w-12 h-12 object-contain"
+                        className="w-14 h-14 object-contain"
                       />
-                    </div>
+                    </motion.div>
                     <div className="flex items-center justify-center space-x-2 mb-2">
-                      <span className="text-2xl">{step.flag}</span>
-                      <span className="text-sm font-medium text-text-secondary bg-gray-100 px-2 py-1 rounded-full">
+                      <motion.span 
+                        className="text-3xl"
+                        animate={{ rotate: [0, 10, -10, 0] }}
+                        transition={{ duration: 3, repeat: Infinity, delay: index * 0.5 }}
+                      >
+                        {step.flag}
+                      </motion.span>
+                      <motion.span 
+                        className="text-sm font-medium text-gray-600 dark:text-gray-400 bg-white/60 dark:bg-gray-800/60 backdrop-blur-sm px-3 py-1 rounded-full border border-white/30 dark:border-gray-700/30"
+                        whileHover={{ scale: 1.05 }}
+                      >
                         {step.period}
-                      </span>
+                      </motion.span>
                     </div>
                   </div>
 
                   {/* Content */}
                   <div className="text-center space-y-2">
-                    <h3 className="text-lg font-bold text-text-primary group-hover:text-primary nav-transition">
+                    <motion.h3 
+                      className="text-lg font-bold text-gray-800 dark:text-gray-100 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300"
+                      whileHover={{ scale: 1.05 }}
+                    >
                       {step.title}
-                    </h3>
-                    <h4 className="text-sm font-medium text-text-secondary">
+                    </motion.h3>
+                    <h4 className="text-sm font-medium text-gray-600 dark:text-gray-400">
                       {step.subtitle}
                     </h4>
-                    <div className="flex items-center justify-center space-x-1 text-xs text-text-secondary">
-                      <Icon name="MapPin" size={12} color="var(--color-text-secondary)" />
+                    <div className="flex items-center justify-center space-x-1 text-xs text-gray-500 dark:text-gray-500">
+                      <Icon name="MapPin" size={12} color="currentColor" />
                       <span>{step.location}</span>
                     </div>
-                    <p className="text-sm text-text-secondary leading-relaxed mt-3">
+                    <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed mt-3">
                       {step.description}
                     </p>
                   </div>
 
                   {/* Step Number */}
-                  <div className="absolute -top-3 -right-3 w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center text-sm font-bold shadow-lg">
+                  <motion.div 
+                    className={`absolute -top-3 -right-3 w-10 h-10 bg-gradient-to-r ${step.color} text-white rounded-full flex items-center justify-center text-sm font-bold shadow-lg border-2 border-white dark:border-gray-800`}
+                    whileHover={{ 
+                      scale: 1.2,
+                      rotate: 360
+                    }}
+                    transition={{ duration: 0.6 }}
+                  >
                     {step.id}
-                  </div>
-                </div>
+                  </motion.div>
+                </motion.div>
 
                 {/* Mobile Arrow */}
                 {index < journeySteps.length - 1 && (
-                  <div className="md:hidden flex justify-center my-4">
-                    <Icon name="ArrowDown" size={20} color="var(--color-primary)" />
-                  </div>
+                  <motion.div 
+                    className="md:hidden flex justify-center my-6"
+                    animate={{ y: [0, 5, 0] }}
+                    transition={{ duration: 2, repeat: Infinity, delay: index * 0.2 }}
+                  >
+                    <Icon name="ArrowDown" size={24} color="#3B82F6" />
+                  </motion.div>
                 )}
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
 
-        {/* Journey Stats */}
-        <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6">
-          <div className="text-center p-4 bg-white rounded-xl shadow-md">
-            <div className="text-2xl font-bold text-primary mb-1">2</div>
-            <div className="text-sm text-text-secondary">Countries</div>
-          </div>
-          <div className="text-center p-4 bg-white rounded-xl shadow-md">
-            <div className="text-2xl font-bold text-primary mb-1">4</div>
-            <div className="text-sm text-text-secondary">Milestones</div>
-          </div>
-          <div className="text-center p-4 bg-white rounded-xl shadow-md">
-            <div className="text-2xl font-bold text-primary mb-1">3+</div>
-            <div className="text-sm text-text-secondary">Years Experience</div>
-          </div>
-          <div className="text-center p-4 bg-white rounded-xl shadow-md">
-            <div className="text-2xl font-bold text-primary mb-1">∞</div>
-            <div className="text-sm text-text-secondary">Learning</div>
-          </div>
-        </div>
+        {/* Journey Stats - Diamond Shape */}
+        <motion.div 
+          className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-8"
+          variants={containerVariants}
+        >
+          {[
+            { value: '2', label: 'Countries', color: 'from-blue-500 to-cyan-500', icon: 'Globe' },
+            { value: '4', label: 'Milestones', color: 'from-purple-500 to-pink-500', icon: 'Target' },
+            { value: '3+', label: 'Years Experience', color: 'from-green-500 to-emerald-500', icon: 'Clock' },
+            { value: '∞', label: 'Learning', color: 'from-orange-500 to-red-500', icon: 'BookOpen' }
+          ].map((stat, index) => (
+            <motion.div 
+              key={index}
+              className="relative group"
+              variants={itemVariants}
+              whileHover={{ 
+                scale: 1.1,
+                rotateY: 10
+              }}
+              transition={{ type: "spring", stiffness: 300 }}
+            >
+              {/* Diamond Container */}
+              <motion.div
+                className="relative w-32 h-32 mx-auto"
+                style={{
+                  transform: 'rotate(45deg)',
+                  transformOrigin: 'center'
+                }}
+              >
+                {/* Animated Background */}
+                <motion.div
+                  className={`absolute inset-0 bg-gradient-to-br ${stat.color} rounded-2xl shadow-xl`}
+                  animate={{
+                    rotate: [0, 360]
+                  }}
+                  transition={{
+                    duration: 20,
+                    repeat: Infinity,
+                    ease: "linear"
+                  }}
+                />
+                
+                {/* Inner Content */}
+                <motion.div
+                  className="absolute inset-1 bg-white/95 dark:bg-gray-800/95 rounded-2xl backdrop-blur-sm flex flex-col items-center justify-center"
+                  style={{
+                    transform: 'rotate(-45deg)'
+                  }}
+                >
+                  {/* Icon */}
+                  <motion.div
+                    className="mb-2"
+                    animate={{
+                      scale: [1, 1.2, 1],
+                      rotate: [0, 10, -10, 0]
+                    }}
+                    transition={{
+                      duration: 3,
+                      repeat: Infinity,
+                      delay: index * 0.5
+                    }}
+                  >
+                    <Icon name={stat.icon} size={20} color="#3B82F6" />
+                  </motion.div>
+                  
+                  {/* Value */}
+                  <motion.div 
+                    className={`text-2xl font-bold bg-gradient-to-r ${stat.color} bg-clip-text text-transparent`}
+                    animate={{ 
+                      scale: [1, 1.1, 1]
+                    }}
+                    transition={{ 
+                      duration: 2, 
+                      repeat: Infinity, 
+                      delay: index * 0.3 
+                    }}
+                  >
+                    {stat.value}
+                  </motion.div>
+                </motion.div>
+
+                {/* Floating Particles */}
+                {[...Array(3)].map((_, i) => (
+                  <motion.div
+                    key={i}
+                    className={`absolute w-1 h-1 bg-gradient-to-r ${stat.color} rounded-full`}
+                    style={{
+                      left: `${20 + i * 30}%`,
+                      top: `${10 + i * 20}%`
+                    }}
+                    animate={{
+                      y: [0, -20, 0],
+                      opacity: [0, 1, 0],
+                      scale: [0, 1, 0]
+                    }}
+                    transition={{
+                      duration: 2,
+                      repeat: Infinity,
+                      delay: i * 0.5 + index * 0.2
+                    }}
+                  />
+                ))}
+              </motion.div>
+              
+              {/* Label */}
+              <motion.div 
+                className="text-center mt-6"
+                style={{
+                  transform: 'rotate(0deg)'
+                }}
+              >
+                <div className="text-sm font-semibold text-gray-700 dark:text-gray-300 group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-blue-600 group-hover:to-purple-600 group-hover:bg-clip-text transition-all duration-300">
+                  {stat.label}
+                </div>
+              </motion.div>
+            </motion.div>
+          ))}
+        </motion.div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

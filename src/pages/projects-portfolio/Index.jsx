@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { motion } from 'framer-motion';
 import Header from '../../components/ui/Header';
 import AIChatbot from '../../components/ui/AIChatbot';
 import SocialMediaBar from '../../components/ui/SocialMediaBar';
@@ -24,13 +25,13 @@ const ProjectsPortfolio = () => {
   const [isMobile, setIsMobile] = useState(false);
   const [viewMode, setViewMode] = useState('grid');
 
-  // Project data
+  // Project data (keeping the same data structure)
   const projects = [
   {
     id: 1,
     title: "Smart Shop - Grocery Deal Analysis",
     description: "An ambitious web application that transforms online grocery shopping by providing unparalleled access to deals from major Canadian retailers using advanced data structures and algorithms.",
-    fullDescription: `Smart Shop is a comprehensive grocery deal analysis platform built with Spring Boot, React, MongoDB, and Selenium Java. The application revolutionizes how users approach grocery shopping by providing intelligent deal analysis across major retailers like Walmart, Zehrs, and Metro.\n\nKey technical implementations include web scraping with Selenium, data validation using regular expressions, inverted indexing for fast retrieval, sophisticated page ranking algorithms, and advanced search capabilities with Trie data structures for word completion. The system processes thousands of deals daily and provides personalized recommendations to help users maximize their savings.`,
+    fullDescription: `Smart Shop is a comprehensive grocery deal analysis platform built with Spring Boot, React, MongoDB, and Selenium Java. The application revolutionizes how users approach grocery shopping by providing intelligent deal analysis across major retailers like Walmart, Zehrs, and Metro.\\n\\nKey technical implementations include web scraping with Selenium, data validation using regular expressions, inverted indexing for fast retrieval, sophisticated page ranking algorithms, and advanced search capabilities with Trie data structures for word completion. The system processes thousands of deals daily and provides personalized recommendations to help users maximize their savings.`,
     image: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136",
     imageAlt: "Food price analysis dashboard showing grocery deals and price comparisons",
     category: "Full Stack Application",
@@ -111,7 +112,7 @@ const ProjectsPortfolio = () => {
     id: 2,
     title: "Vehicle Loan Management System - Indian Finance Solution",
     description: "An end-to-end vehicle loan management system addressing India's complex loan approval challenges, reducing processing time from months to days through automation and digital transformation.",
-    fullDescription: `A comprehensive solution to India's vehicle loan acquisition challenges, where traditional processes take weeks to months for approval with multiple institutional visits. This system revolutionizes the Indian finance sector by automating requirements verification, document processing, and loan approvals while providing a 360-degree customer view across the organization.\n\nBuilt with enterprise-grade technologies including Angular, Spring Boot, Hibernate, and Oracle Database, the system features dual modules for users and administrators, EMI calculators, eligibility checkers, and comprehensive loan tracking. The solution transforms customer interactions and significantly reduces both processing time and associated risks in vehicle loan management.`,
+    fullDescription: `A comprehensive solution to India's vehicle loan acquisition challenges, where traditional processes take weeks to months for approval with multiple institutional visits. This system revolutionizes the Indian finance sector by automating requirements verification, document processing, and loan approvals while providing a 360-degree customer view across the organization.\\n\\nBuilt with enterprise-grade technologies including Angular, Spring Boot, Hibernate, and Oracle Database, the system features dual modules for users and administrators, EMI calculators, eligibility checkers, and comprehensive loan tracking. The solution transforms customer interactions and significantly reduces both processing time and associated risks in vehicle loan management.`,
     image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f",
     imageAlt: "Vehicle loan management system dashboard showing loan applications and approval workflow",
     category: "Enterprise Finance Application",
@@ -191,7 +192,7 @@ const ProjectsPortfolio = () => {
     id: 3,
     title: "Brain-Computer Interface (BCI)",
     description: "An innovative Brain-Computer Interface system that translates brain signals into text/speech using CNN and Bayesian Decoding with 90% accuracy for accessibility applications.",
-    fullDescription: `Developed a cutting-edge Brain-Computer Interface (BCI) system using Convolutional Neural Networks (CNN) and Bayesian Decoding algorithms to translate brain signals into text and speech with 90% accuracy. The system improves signal precision through advanced feedback mechanisms and was tested on 100 diverse brain signals to enhance accessibility for individuals with disabilities.\n\nThis research project demonstrates expertise in machine learning, signal processing, and accessibility technology, contributing to the advancement of assistive technologies for people with communication disabilities.`,
+    fullDescription: `Developed a cutting-edge Brain-Computer Interface (BCI) system using Convolutional Neural Networks (CNN) and Bayesian Decoding algorithms to translate brain signals into text and speech with 90% accuracy. The system improves signal precision through advanced feedback mechanisms and was tested on 100 diverse brain signals to enhance accessibility for individuals with disabilities.\\n\\nThis research project demonstrates expertise in machine learning, signal processing, and accessibility technology, contributing to the advancement of assistive technologies for people with communication disabilities.`,
     image: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56",
     imageAlt: "Brain-computer interface visualization showing neural signals and text conversion",
     category: "Research & AI",
@@ -260,7 +261,7 @@ const ProjectsPortfolio = () => {
     id: 4,
     title: "LeadConnect - AI-Powered Lead Nurturing",
     description: "An AI-powered lead nurturing platform that integrates with LinkedIn to help businesses maintain connections, nurture relationships, and fuel growth through personalized outreach.",
-    fullDescription: `LeadConnect is your AI-powered lead nurturing sidekick designed to help you keep in touch with your network, nurture relationships, and fuel growth. In today's fast-paced business environment, staying connected with former colleagues, promising leads, and talented individuals often falls by the wayside.\n\nThe platform seamlessly integrates with LinkedIn and harnesses AI to provide timely, personalized message recommendations. Unlike traditional CRM solutions that rely on templated messages, LeadConnect offers a personalized approach to outreach, ensuring communications resonate with each recipient while focusing on nurturing relationships for long-term growth.`,
+    fullDescription: `LeadConnect is your AI-powered lead nurturing sidekick designed to help you keep in touch with your network, nurture relationships, and fuel growth. In today's fast-paced business environment, staying connected with former colleagues, promising leads, and talented individuals often falls by the wayside.\\n\\nThe platform seamlessly integrates with LinkedIn and harnesses AI to provide timely, personalized message recommendations. Unlike traditional CRM solutions that rely on templated messages, LeadConnect offers a personalized approach to outreach, ensuring communications resonate with each recipient while focusing on nurturing relationships for long-term growth.`,
     image: "https://images.unsplash.com/photo-1552664730-d307ca884978",
     imageAlt: "AI-powered lead nurturing dashboard showing LinkedIn integration and personalized outreach recommendations",
     category: "Full Stack AI powered Application",
@@ -334,7 +335,7 @@ const ProjectsPortfolio = () => {
     id: 5,
     title: "Global Education Disparities Analysis",
     description: "A comprehensive data analytics project leveraging MongoDB, K-means clustering, and Tableau to explore educational disparities worldwide using World Bank datasets.",
-    fullDescription: `The Global Education Disparities Analysis project leverages MongoDB and advanced analytics to explore educational disparities worldwide, utilizing World Bank datasets. The project includes K-means clustering for identifying patterns across countries and Tableau for superior data visualization.\n\nThis approach clarifies the relationship between socioeconomic factors and educational outcomes, offering insights for targeted policy interventions. The findings, underscored by machine learning and dynamic visualizations, provide a data-driven basis for addressing educational inequities across 20+ countries, aiming to inform global educational strategies and promote equity.`,
+    fullDescription: `The Global Education Disparities Analysis project leverages MongoDB and advanced analytics to explore educational disparities worldwide, utilizing World Bank datasets. The project includes K-means clustering for identifying patterns across countries and Tableau for superior data visualization.\\n\\nThis approach clarifies the relationship between socioeconomic factors and educational outcomes, offering insights for targeted policy interventions. The findings, underscored by machine learning and dynamic visualizations, provide a data-driven basis for addressing educational inequities across 20+ countries, aiming to inform global educational strategies and promote equity.`,
     image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71",
     imageAlt: "Global education data visualization showing educational disparities across different countries and regions",
     category: "Data Analytics",
@@ -403,7 +404,7 @@ const ProjectsPortfolio = () => {
     id: 6,
     title: "🤖 AI-Powered Portfolio Website - Built with rocket.new",
     description: "A cutting-edge portfolio website developed through collaboration with Agentic AI technology from rocket.new, showcasing the future of AI-assisted development and intelligent code generation.",
-    fullDescription: `A revolutionary portfolio website built using Agentic AI technology from rocket.new, demonstrating the transformative power of AI-assisted development. This project showcases how artificial intelligence can accelerate development workflows, generate intelligent code solutions, and create professional-grade applications with unprecedented efficiency and innovation.\n\nDeveloped through human-AI collaboration, this portfolio leverages React 18, Vite, and TailwindCSS with AI-powered code generation, intelligent component architecture, and automated optimization suggestions. The project represents the future of software development where AI assistants enhance human creativity and productivity, resulting in faster development cycles and higher code quality.`,
+    fullDescription: `A revolutionary portfolio website built using Agentic AI technology from rocket.new, demonstrating the transformative power of AI-assisted development. This project showcases how artificial intelligence can accelerate development workflows, generate intelligent code solutions, and create professional-grade applications with unprecedented efficiency and innovation.\\n\\nDeveloped through human-AI collaboration, this portfolio leverages React 18, Vite, and TailwindCSS with AI-powered code generation, intelligent component architecture, and automated optimization suggestions. The project represents the future of software development where AI assistants enhance human creativity and productivity, resulting in faster development cycles and higher code quality.`,
     image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f",
     imageAlt: "AI-powered portfolio website showcasing intelligent code generation and modern development with rocket.new technology",
     category: "🚀 AI-Powered Web Development",
@@ -498,7 +499,7 @@ const ProjectsPortfolio = () => {
     id: 7,
     title: "Eco-Finds - Sustainable E-commerce Platform",
     description: "An innovative e-commerce platform promoting sustainable living through eco-friendly products, rewards system, and environmental impact tracking.",
-    fullDescription: `Eco-Finds is an innovative e-commerce platform that promotes sustainable living by providing a wide range of eco-friendly products. The platform makes eco-friendly shopping easy, enjoyable, and accessible with features like a comprehensive rewards system, wishlist functionality, and detailed environmental impact information for each product.\n\nBuilt with Python Django and modern web technologies, the platform offers a seamless shopping experience with real-time cart updates, user account management, and various payment options. The focus on sustainability is enhanced through CO2 emission data and environmental impact information for informed purchasing decisions.`,
+    fullDescription: `Eco-Finds is an innovative e-commerce platform that promotes sustainable living by providing a wide range of eco-friendly products. The platform makes eco-friendly shopping easy, enjoyable, and accessible with features like a comprehensive rewards system, wishlist functionality, and detailed environmental impact information for each product.\\n\\nBuilt with Python Django and modern web technologies, the platform offers a seamless shopping experience with real-time cart updates, user account management, and various payment options. The focus on sustainability is enhanced through CO2 emission data and environmental impact information for informed purchasing decisions.`,
     image: "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09",
     imageAlt: "Eco-friendly e-commerce platform showing sustainable products and environmental impact data",
     category: "Web Development",
@@ -588,7 +589,7 @@ const ProjectsPortfolio = () => {
     id: 8,
     title: "Hotel Management System",
     description: "A comprehensive web-based hotel management application designed to streamline hotel operations and enhance guest experiences with booking, room management, and guest services.",
-    fullDescription: `A complete hotel management solution built with modern web technologies to facilitate efficient hotel operations and superior guest service. The system provides a seamless experience for both hotel staff and guests through intuitive interfaces for booking management, room administration, and guest services.\n\nFeaturing responsive design with Bootstrap, secure user authentication, and comprehensive management modules, this system addresses all aspects of hotel operations from online reservations to guest check-in/check-out processes. The application ensures smooth hotel operations while maintaining detailed records and providing excellent user experience across all devices.`,
+    fullDescription: `A complete hotel management solution built with modern web technologies to facilitate efficient hotel operations and superior guest service. The system provides a seamless experience for both hotel staff and guests through intuitive interfaces for booking management, room administration, and guest services.\\n\\nFeaturing responsive design with Bootstrap, secure user authentication, and comprehensive management modules, this system addresses all aspects of hotel operations from online reservations to guest check-in/check-out processes. The application ensures smooth hotel operations while maintaining detailed records and providing excellent user experience across all devices.`,
     image: "https://images.unsplash.com/photo-1566073771259-6a8506099945",
     imageAlt: "Hotel management system dashboard showing booking interface and room management features",
     category: "Web Development",
@@ -668,7 +669,7 @@ const ProjectsPortfolio = () => {
     id: 9,
     title: "Congestive Heart Failure Detection Using Deep Learning",
     description: "Advanced medical AI research project using RNN-LSTM architectures to detect Congestive Heart Failure from ECG data with high accuracy and automated feature extraction.",
-    fullDescription: `A cutting-edge medical AI research project focused on early detection of Congestive Heart Failure (CHF) using deep learning techniques. CHF is characterized by the heart's inability to pump blood adequately throughout the body without increased intra-cardiac pressure, making early detection crucial for patient outcomes.\n\nThis project employs Recurrent Neural Networks (RNNs) with Long Short-Term Memory (LSTM) architectures to analyze ECG signals and create a diagnostic algorithm that achieves high accuracy with automated feature extraction. The research addresses the limitations of traditional diagnostic approaches that require high expertise and provides a non-invasive, automated solution for CHF detection using electrocardiogram data.`,
+    fullDescription: `A cutting-edge medical AI research project focused on early detection of Congestive Heart Failure (CHF) using deep learning techniques. CHF is characterized by the heart's inability to pump blood adequately throughout the body without increased intra-cardiac pressure, making early detection crucial for patient outcomes.\\n\\nThis project employs Recurrent Neural Networks (RNNs) with Long Short-Term Memory (LSTM) architectures to analyze ECG signals and create a diagnostic algorithm that achieves high accuracy with automated feature extraction. The research addresses the limitations of traditional diagnostic approaches that require high expertise and provides a non-invasive, automated solution for CHF detection using electrocardiogram data.`,
     image: "/assets/images/Heart.jfif",
     imageAlt: "Medical AI interface showing ECG waveform analysis and heart failure detection algorithms",
     category: "Medical AI & Research",
@@ -777,10 +778,32 @@ const ProjectsPortfolio = () => {
 
   }];
 
-
   // Extract unique categories and technologies
   const categories = [...new Set(projects.map((p) => p.category))];
   const technologies = [...new Set(projects.flatMap((p) => p.technologies))];
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+        delayChildren: 0.2
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { y: 30, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        duration: 0.6,
+        ease: "easeOut"
+      }
+    }
+  };
 
   useEffect(() => {
     const checkMobile = () => {
@@ -872,186 +895,292 @@ const ProjectsPortfolio = () => {
   const regularProjects = filteredProjects?.filter((p) => ![1, 4, 7]?.includes(p?.id));
 
   return (
-    <div className="min-h-screen bg-background">
+    <motion.div 
+      className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 dark:from-gray-900 dark:via-blue-900 dark:to-indigo-900"
+      initial="hidden"
+      animate="visible"
+      variants={containerVariants}
+    >
+      {/* Animated Background */}
+      <div className="fixed inset-0 pointer-events-none">
+        {[...Array(6)].map((_, i) => (
+          <motion.div
+            key={i}
+            className={`absolute w-2 h-2 bg-gradient-to-r from-blue-400 to-purple-500 rounded-full`}
+            style={{
+              left: `${20 + i * 15}%`,
+              top: `${30 + i * 10}%`
+            }}
+            animate={{
+              y: [0, -100, 0],
+              opacity: [0, 1, 0]
+            }}
+            transition={{
+              duration: 3 + i,
+              repeat: Infinity,
+              delay: i * 0.5
+            }}
+          />
+        ))}
+      </div>
+
       <Header />
+      
       {/* Hero Section */}
-      <section className="pt-12 pb-16 px-8">
+      <motion.section 
+        className="pt-12 pb-16 px-8 relative"
+        variants={itemVariants}
+      >
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-12">
-            <div className="flex items-center justify-center space-x-2 mb-4">
-              <Icon name="FolderOpen" size={32} color="var(--color-primary)" />
-              <h1 className="text-4xl md:text-5xl font-bold text-text-primary">
+          <motion.div 
+            className="text-center mb-12"
+            variants={itemVariants}
+          >
+            <motion.div 
+              className="flex items-center justify-center space-x-2 mb-4"
+              whileHover={{ scale: 1.05 }}
+              transition={{ type: "spring", stiffness: 300 }}
+            >
+              <motion.div
+                animate={{ rotate: [0, 360] }}
+                transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+              >
+                <Icon name="FolderOpen" size={32} color="#3B82F6" />
+              </motion.div>
+              <h1 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
                 My Projects
               </h1>
-            </div>
-            <p className="text-xl text-text-secondary max-w-3xl mx-auto leading-relaxed">
+            </motion.div>
+            <motion.p 
+              className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed"
+              variants={itemVariants}
+            >
               From algorithms to interfaces—creating intelligent systems that connect ideas with technology
-            </p>
-          </div>
+            </motion.p>
+          </motion.div>
 
           {/* Project Statistics */}
-          <ProjectStats projects={projects} />
+          <motion.div variants={itemVariants}>
+            <ProjectStats projects={projects} />
+          </motion.div>
 
           {/* Filter Controls */}
-          <ProjectFilter
-            categories={categories}
-            technologies={technologies}
-            onFilterChange={handleFilterChange}
-            onSortChange={handleSortChange}
-            activeFilters={filters}
-            isMobile={isMobile} />
-
+          <motion.div variants={itemVariants}>
+            <ProjectFilter
+              categories={categories}
+              technologies={technologies}
+              onFilterChange={handleFilterChange}
+              onSortChange={handleSortChange}
+              activeFilters={filters}
+              isMobile={isMobile} 
+            />
+          </motion.div>
 
           {/* Results Summary */}
-          <div className="flex items-center justify-between mb-8">
-            <p className="text-text-secondary">
+          <motion.div 
+            className="flex items-center justify-between mb-8"
+            variants={itemVariants}
+          >
+            <p className="text-gray-600 dark:text-gray-400">
               Showing {filteredProjects?.length} of {projects?.length} projects
             </p>
             
             {/* View Toggle for Desktop */}
-            {!isMobile &&
-            <div className="flex items-center space-x-2">
-                <span className="text-sm text-text-secondary">View:</span>
-                <div className="flex bg-muted rounded-lg p-1">
-                  <button 
+            {!isMobile && (
+              <div className="flex items-center space-x-2">
+                <span className="text-sm text-gray-600 dark:text-gray-400">View:</span>
+                <div className="flex bg-white/60 dark:bg-gray-800/60 backdrop-blur-sm rounded-lg p-1 border border-white/30 dark:border-gray-700/30">
+                  <motion.button 
                     onClick={() => setViewMode('grid')}
-                    className={`px-3 py-1 rounded text-sm nav-transition ${
+                    className={`px-3 py-1 rounded text-sm transition-all duration-300 ${
                       viewMode === 'grid' 
-                        ? 'bg-primary text-primary-foreground' 
-                        : 'text-text-secondary hover:text-text-primary'
+                        ? 'bg-blue-500 text-white shadow-lg' 
+                        : 'text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400'
                     }`}
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
                   >
                     Grid
-                  </button>
-                  <button 
+                  </motion.button>
+                  <motion.button 
                     onClick={() => setViewMode('list')}
-                    className={`px-3 py-1 rounded text-sm nav-transition ${
+                    className={`px-3 py-1 rounded text-sm transition-all duration-300 ${
                       viewMode === 'list' 
-                        ? 'bg-primary text-primary-foreground' 
-                        : 'text-text-secondary hover:text-text-primary'
+                        ? 'bg-blue-500 text-white shadow-lg' 
+                        : 'text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400'
                     }`}
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
                   >
                     List
-                  </button>
+                  </motion.button>
                 </div>
               </div>
-            }
-          </div>
+            )}
+          </motion.div>
 
           {/* Featured Projects */}
-          {filters?.category === 'all' && filters?.technology === 'all' &&
-          <div className="mb-12">
+          {filters?.category === 'all' && filters?.technology === 'all' && (
+            <motion.div 
+              className="mb-12"
+              variants={itemVariants}
+            >
               <div className="flex items-center space-x-2 mb-6">
-                <Icon name="Star" size={20} color="var(--color-accent)" />
-                <h2 className="text-2xl font-semibold text-text-primary">Featured Projects</h2>
+                <motion.div
+                  animate={{ scale: [1, 1.2, 1] }}
+                  transition={{ duration: 2, repeat: Infinity }}
+                >
+                  <Icon name="Star" size={20} color="#F59E0B" />
+                </motion.div>
+                <h2 className="text-2xl font-semibold text-gray-800 dark:text-gray-100">Featured Projects</h2>
               </div>
               
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
-                {featuredProjects?.map((project) =>
-              <ProjectCard
-                key={project?.id}
-                project={project}
-                onViewDetails={handleViewDetails}
-                featured={true} />
-
-              )}
+                {featuredProjects?.map((project, index) => (
+                  <motion.div
+                    key={project?.id}
+                    initial={{ opacity: 0, y: 50 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: index * 0.2, duration: 0.6 }}
+                  >
+                    <ProjectCard
+                      project={project}
+                      onViewDetails={handleViewDetails}
+                      featured={true} 
+                    />
+                  </motion.div>
+                ))}
               </div>
-            </div>
-          }
+            </motion.div>
+          )}
 
           {/* All Projects Grid */}
-          <div className="mb-6">
-            <h2 className="text-2xl font-semibold text-text-primary mb-6">
+          <motion.div 
+            className="mb-6"
+            variants={itemVariants}
+          >
+            <h2 className="text-2xl font-semibold text-gray-800 dark:text-gray-100 mb-6">
               {filters?.category === 'all' && filters?.technology === 'all' ? 'All Projects' : 'Filtered Results'}
             </h2>
             
-            {filteredProjects?.length > 0 ?
-            <div className={viewMode === 'grid' 
-              ? "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" 
-              : "flex flex-col space-y-6"
-            }>
-                {(filters?.category === 'all' && filters?.technology === 'all' ? regularProjects : filteredProjects)?.map((project) =>
-              <ProjectCard
-                key={project?.id}
-                project={project}
-                onViewDetails={handleViewDetails}
-                viewMode={viewMode} />
-
-              )}
-              </div> :
-
-            <div className="text-center py-16">
-                <Icon name="Search" size={48} color="var(--color-text-secondary)" className="mx-auto mb-4" />
-                <h3 className="text-xl font-semibold text-text-primary mb-2">No Projects Found</h3>
-                <p className="text-text-secondary mb-6">
+            {filteredProjects?.length > 0 ? (
+              <motion.div 
+                className={viewMode === 'grid' 
+                  ? "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" 
+                  : "flex flex-col space-y-6"
+                }
+                variants={containerVariants}
+              >
+                {(filters?.category === 'all' && filters?.technology === 'all' ? regularProjects : filteredProjects)?.map((project, index) => (
+                  <motion.div
+                    key={project?.id}
+                    variants={itemVariants}
+                    whileHover={{ y: -5 }}
+                    transition={{ type: "spring", stiffness: 300 }}
+                  >
+                    <ProjectCard
+                      project={project}
+                      onViewDetails={handleViewDetails}
+                      viewMode={viewMode} 
+                    />
+                  </motion.div>
+                ))}
+              </motion.div>
+            ) : (
+              <motion.div 
+                className="text-center py-16"
+                variants={itemVariants}
+              >
+                <motion.div
+                  animate={{ rotate: [0, 10, -10, 0] }}
+                  transition={{ duration: 2, repeat: Infinity }}
+                >
+                  <Icon name="Search" size={48} color="#6B7280" className="mx-auto mb-4" />
+                </motion.div>
+                <h3 className="text-xl font-semibold text-gray-800 dark:text-gray-100 mb-2">No Projects Found</h3>
+                <p className="text-gray-600 dark:text-gray-400 mb-6">
                   Try adjusting your filters to see more projects.
                 </p>
-                <Button
-                variant="outline"
-                iconName="RotateCcw"
-                iconPosition="left"
-                onClick={() => {
-                  setFilters({ category: 'all', technology: 'all', sort: 'recent' });
-                }}>
-
-                  Reset Filters
-                </Button>
-              </div>
-            }
-          </div>
-
-          {/* Load More Button (if needed) */}
-          {filteredProjects?.length > 9 &&
-          <div className="text-center mt-12">
-              <Button
-              variant="outline"
-              size="lg"
-              iconName="Plus"
-              iconPosition="left">
-
-                Load More Projects
-              </Button>
-            </div>
-          }
+                <motion.button
+                  onClick={() => {
+                    setFilters({ category: 'all', technology: 'all', sort: 'recent' });
+                  }}
+                  className="inline-flex items-center space-x-2 px-6 py-3 bg-blue-500 text-white rounded-xl font-semibold hover:bg-blue-600 transition-colors duration-300"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  <Icon name="RotateCcw" size={16} color="white" />
+                  <span>Reset Filters</span>
+                </motion.button>
+              </motion.div>
+            )}
+          </motion.div>
         </div>
-      </section>
+      </motion.section>
+
       {/* Call to Action Section */}
-      <section className="py-16 px-8 bg-gradient-to-r from-primary/5 to-accent/5">
+      <motion.section 
+        className="py-16 px-8 bg-gradient-to-r from-blue-500/10 to-purple-500/10 backdrop-blur-sm"
+        variants={itemVariants}
+      >
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl font-bold text-text-primary mb-4">
+          <motion.h2 
+            className="text-3xl font-bold text-gray-800 dark:text-gray-100 mb-4"
+            variants={itemVariants}
+          >
             Interested in Working Together?
-          </h2>
-          <p className="text-lg text-text-secondary mb-8">
+          </motion.h2>
+          <motion.p 
+            className="text-lg text-gray-600 dark:text-gray-300 mb-8"
+            variants={itemVariants}
+          >
             I'm always excited to take on new challenges and collaborate on innovative projects. Let's discuss how we can bring your ideas to life.
-          </p>
+          </motion.p>
           
-          <div className="flex justify-center">
-            <Button
-              variant="default"
-              size="lg"
-              iconName="MessageCircle"
-              iconPosition="left"
-              onClick={() => navigate('/contact-engagement')}>
-
-              Start a Conversation
-            </Button>
-          </div>
+          <motion.div 
+            className="flex justify-center"
+            variants={itemVariants}
+          >
+            <motion.button
+              onClick={() => navigate('/contact-engagement')}
+              className="inline-flex items-center space-x-2 px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-2xl font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
+              whileHover={{ scale: 1.05, y: -2 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <Icon name="MessageCircle" size={20} color="white" />
+              <span>Start a Conversation</span>
+            </motion.button>
+          </motion.div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Floating CTA */}
-      <CTAButton position="floating" />
+      <motion.div
+        initial={{ scale: 0, rotate: -180 }}
+        animate={{ scale: 1, rotate: 0 }}
+        transition={{ delay: 1.5, duration: 0.8, ease: "backOut" }}
+      >
+        <CTAButton position="floating" />
+      </motion.div>
+
       {/* AI Chatbot */}
-      <AIChatbot />
+      <motion.div
+        initial={{ y: 100, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ delay: 1.8, duration: 0.6 }}
+      >
+        <AIChatbot />
+      </motion.div>
+
       {/* Project Modal */}
       <ProjectModal
         project={selectedProject}
         isOpen={isModalOpen}
         onClose={handleCloseModal}
-        onNavigateProject={handleNavigateProject} />
-
-    </div>);
-
+        onNavigateProject={handleNavigateProject} 
+      />
+    </motion.div>
+  );
 };
 
 export default ProjectsPortfolio;
